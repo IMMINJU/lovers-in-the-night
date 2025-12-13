@@ -10,21 +10,20 @@ function DialogueBox() {
   const { currentDialogue, nextDialogue } = useScriptStore()
   const { displayedText, isComplete, skip } = useTypingEffect(currentDialogue?.text, 30)
 
-  if (!currentDialogue) return null
-
-  // system 타입은 자동으로 넘기기
-  const isSystemMessage = currentDialogue.type === 'system'
-
+  // system 타입은 자동으로 넘기기 - Hook은 최상단에 위치
   useEffect(() => {
-    if (isSystemMessage) {
+    if (currentDialogue?.type === 'system') {
       const timer = setTimeout(() => {
         nextDialogue()
       }, 100)
       return () => clearTimeout(timer)
     }
-  }, [isSystemMessage, nextDialogue])
+  }, [currentDialogue?.type, nextDialogue])
 
-  if (isSystemMessage) {
+  if (!currentDialogue) return null
+
+  // system 메시지는 렌더링하지 않음
+  if (currentDialogue.type === 'system') {
     return null
   }
 
