@@ -94,23 +94,26 @@ export const useScriptStore = create((set, get) => ({
       currentChoices: null,
     })
 
-    // nextDialogue가 있으면 해당 대화로 이동
-    if (choice.nextDialogue) {
-      const targetIndex = currentScript.dialogues.findIndex(
-        d => d.id === choice.nextDialogue
-      )
+    // 게이지 변화 팝업을 볼 수 있도록 지연
+    setTimeout(() => {
+      // nextDialogue가 있으면 해당 대화로 이동
+      if (choice.nextDialogue) {
+        const targetIndex = currentScript.dialogues.findIndex(
+          d => d.id === choice.nextDialogue
+        )
 
-      if (targetIndex !== -1) {
-        set({
-          currentDialogueIndex: targetIndex,
-          currentDialogue: currentScript.dialogues[targetIndex],
-        })
-        return
+        if (targetIndex !== -1) {
+          set({
+            currentDialogueIndex: targetIndex,
+            currentDialogue: currentScript.dialogues[targetIndex],
+          })
+          return
+        }
       }
-    }
 
-    // 없으면 다음 대화로
-    get().nextDialogue()
+      // 없으면 다음 대화로
+      get().nextDialogue()
+    }, 800)
   },
 
   // 씬 종료 콜백 설정
