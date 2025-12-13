@@ -23,7 +23,7 @@ function CharacterPortrait({ character, expression }) {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
-      className="absolute left-0 right-0 mx-auto bottom-0 pointer-events-none z-5 w-fit max-h-[80vh] max-w-[50%]"
+      className="absolute left-0 right-0 mx-auto bottom-0 pointer-events-none z-5 w-fit max-h-[95vh] md:max-h-[80vh] max-w-[80%] md:max-w-[50%]"
     >
       <img
         src={imagePath}
