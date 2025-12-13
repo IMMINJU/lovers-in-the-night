@@ -97,7 +97,7 @@
           "id": "c1_2",
           "text": "\"저는 거짓말을 너무 잘해요\"",
           "affection": 12,
-          "suspicion": 15,
+          "suspicion": 8,
           "reverseSuspicion": 10,
           "nextDialogue": "d14_2"
         },
@@ -227,7 +227,7 @@
           "id": "c2_3",
           "text": "\"특별하다니요?\"",
           "affection": 4,
-          "suspicion": 10,
+          "suspicion": 6,
           "reverseSuspicion": 8,
           "nextDialogue": "d28_3"
         }

@@ -169,7 +169,7 @@
           "id": "c2_1",
           "text": "\"별로요. 전 괜찮은 편이에요\"",
           "affection": 2,
-          "suspicion": 8,
+          "suspicion": 5,
           "reverseSuspicion": 7,
           "nextDialogue": "d17_1"
         },
@@ -185,7 +185,7 @@
           "id": "c2_3",
           "text": "\"요즘 진짜 힘들어요... 삶의 의미를 못 찾겠어요\"",
           "affection": 12,
-          "suspicion": 7,
+          "suspicion": 5,
           "reverseSuspicion": 8,
           "nextDialogue": "d17_3"
         }

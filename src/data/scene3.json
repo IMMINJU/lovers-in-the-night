@@ -141,7 +141,7 @@
           "id": "c1_3",
           "text": "\"맞아요! 다음에 또 만나요 💕\"",
           "affection": 12,
-          "suspicion": 8,
+          "suspicion": 5,
           "nextDialogue": "d16_3"
         }
       ]

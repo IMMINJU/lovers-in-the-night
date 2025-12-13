@@ -108,14 +108,14 @@ export const useGameStore = create((set) => ({
 
     // 우선순위 순서대로 체크
 
-    // 1. D엔딩 - 들통 (의심도 60 이상) - 최우선
-    if (suspicion >= 60) return 'ending_d'
+    // 1. D엔딩 - 들통 (의심도 75 이상) - 최우선
+    if (suspicion >= 75) return 'ending_d'
 
-    // 2. A엔딩 - 역관광 (호감도 75+, 의심도 35 이하)
-    if (affection >= 75 && suspicion <= 35) return 'ending_a'
+    // 2. A엔딩 - 역관광 (호감도 70+, 의심도 60 이하)
+    if (affection >= 70 && suspicion <= 60) return 'ending_a'
 
-    // 3. C엔딩 - 병맛 로맨스 (호감도 50+, 의심도 20-45)
-    if (affection >= 50 && suspicion >= 20 && suspicion <= 45) return 'ending_c'
+    // 3. C엔딩 - 병맛 로맨스 (호감도 50+, 의심도 55-70)
+    if (affection >= 50 && suspicion >= 55 && suspicion <= 70) return 'ending_c'
 
     // 4. B엔딩 - 프로의 벽 (나머지 모든 경우)
     return 'ending_b'

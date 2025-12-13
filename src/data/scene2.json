@@ -63,7 +63,7 @@
           "id": "c1_3",
           "text": "네, 여기 단골이에요. 근처 직장 다니거든요.",
           "affection": 3,
-          "suspicion": 15,
+          "suspicion": 8,
           "nextDialogue": "d7_3",
           "flag": "lie_job_nearby"
         }
@@ -143,7 +143,7 @@
           "id": "c2_1",
           "text": "네, 바로 근처 살아요. 도보 5분?",
           "affection": 4,
-          "suspicion": 12,
+          "suspicion": 7,
           "nextDialogue": "d17_1"
         },
         {
@@ -314,7 +314,7 @@
           "id": "c4_1",
           "text": "좋아요!",
           "affection": 15,
-          "suspicion": 10,
+          "suspicion": 5,
           "nextDialogue": "d34_1"
         },
         {

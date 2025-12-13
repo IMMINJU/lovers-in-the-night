@@ -49,22 +49,23 @@ function App() {
 
   // 씬 전환 핸들러
   const handleSceneTransition = useCallback(() => {
-    // 의심도 70 이상이면 즉시 D엔딩
-    if (suspicion >= 70) {
+    // 의심도 75 이상이면 즉시 D엔딩 (들통) - 실수로 실패하지 않도록 높게 설정
+    if (suspicion >= 75) {
       setGameState('ending')
       return
     }
 
     // 씬8 분기점 (첫 번째 분기)
+    // 의심도가 핵심 분기 기준 (호감도는 최소 67이므로 항상 충족)
     if (currentScene === 'scene8') {
-      if (affection >= 50 && suspicion <= 20) {
-        setScene('scene9_a') // A루트
+      if (suspicion <= 58) {
+        setScene('scene9_a') // A루트 - 낮은 의심도 (27-58) → A엔딩 가능
         loadScript(sceneMap['scene9_a'])
-      } else if (affection < 50 || suspicion > 35) {
-        setScene('scene9_b') // B루트
+      } else if (suspicion >= 68) {
+        setScene('scene9_b') // B루트 - 높은 의심도 (68-74) → B엔딩
         loadScript(sceneMap['scene9_b'])
       } else {
-        setScene('scene9_c') // C루트
+        setScene('scene9_c') // C루트 - 중간 의심도 (59-67) → C엔딩 최적
         loadScript(sceneMap['scene9_c'])
       }
       return
