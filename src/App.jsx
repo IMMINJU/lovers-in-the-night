@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from 'react'
+import { useEffect, useCallback } from 'react'
 import GameContainer from './components/GameContainer'
 import TitleScreen from './components/TitleScreen'
 import EndingScreen from './components/EndingScreen'
@@ -46,63 +46,6 @@ const sceneMap = {
 function App() {
   const { gameState, currentScene, setScene, setGameState, calculateEnding, suspicion, affection } = useGameStore()
   const { loadScript, setOnSceneEnd } = useScriptStore()
-  const [imagesLoaded, setImagesLoaded] = useState(false)
-
-  // 이미지 프리로드
-  useEffect(() => {
-    const imagesToPreload = [
-      // 배경
-      '/images/backgrounds/room.png',
-      '/images/backgrounds/cafe.png',
-      '/images/backgrounds/park.png',
-      '/images/backgrounds/cult.png',
-      '/images/backgrounds/street.png',
-      // 지우 표정
-      '/images/characters/jiwoo-smile.png',
-      '/images/characters/jiwoo-normal.png',
-      '/images/characters/jiwoo-curious.png',
-      '/images/characters/jiwoo-serious.png',
-      '/images/characters/jiwoo-surprised.png',
-      '/images/characters/jiwoo-shy.png',
-      '/images/characters/jiwoo-worried.png',
-      // 서준 표정
-      '/images/characters/seojun-smile.png',
-      '/images/characters/seojun-normal.png',
-      '/images/characters/seojun-serious.png',
-      '/images/characters/seojun-cold.png',
-      '/images/characters/seojun-confused.png',
-      // 기타
-      '/images/characters/leader.png',
-      '/images/characters/members.png',
-      // 엔딩
-      '/images/endings/ending-a.png',
-      '/images/endings/ending-b.png',
-      '/images/endings/ending-c.png',
-      '/images/endings/ending-d.png',
-      // 타이틀
-      '/images/title-screen.jpg',
-    ]
-
-    let loadedCount = 0
-    const totalImages = imagesToPreload.length
-
-    imagesToPreload.forEach((src) => {
-      const img = new Image()
-      img.onload = () => {
-        loadedCount++
-        if (loadedCount === totalImages) {
-          setImagesLoaded(true)
-        }
-      }
-      img.onerror = () => {
-        loadedCount++
-        if (loadedCount === totalImages) {
-          setImagesLoaded(true)
-        }
-      }
-      img.src = src
-    })
-  }, [])
 
   // 씬 전환 핸들러
   const handleSceneTransition = useCallback(() => {
@@ -172,18 +115,9 @@ function App() {
 
   return (
     <div className="w-screen h-screen bg-black flex items-center justify-center" style={{ height: '100dvh' }}>
-      {!imagesLoaded ? (
-        <div className="flex flex-col items-center justify-center gap-4">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-purple-500"></div>
-          <p className="text-purple-300 text-sm">이미지 로딩 중...</p>
-        </div>
-      ) : (
-        <>
-          {gameState === 'title' && <TitleScreen />}
-          {gameState === 'playing' && <GameContainer />}
-          {gameState === 'ending' && <EndingScreen />}
-        </>
-      )}
+      {gameState === 'title' && <TitleScreen />}
+      {gameState === 'playing' && <GameContainer />}
+      {gameState === 'ending' && <EndingScreen />}
     </div>
   )
 }

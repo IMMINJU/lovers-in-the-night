@@ -23,12 +23,12 @@ function CharacterPortrait({ character, expression }) {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
-      className="absolute left-1/2 bottom-0 -translate-x-1/2 pointer-events-none z-5 max-h-full"
+      className="absolute left-1/2 bottom-0 -translate-x-1/2 pointer-events-none z-5"
     >
       <img
         src={imagePath}
         alt={character}
-        className="h-auto max-h-full object-contain drop-shadow-2xl"
+        className="h-auto max-h-[90vh] md:max-h-full object-contain drop-shadow-2xl"
       />
     </motion.div>
   )

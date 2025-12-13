@@ -28,7 +28,7 @@ function SplitScreenDialogue({ dialogue }) {
           <img
             src={getCharacterImage(left.character, left.expression)}
             alt={left.character}
-            className="h-auto max-h-[75vh] object-contain drop-shadow-2xl"
+            className="h-auto max-h-[90vh] md:max-h-full object-contain drop-shadow-2xl"
             style={{ mixBlendMode: 'multiply' }}
           />
         </motion.div>
