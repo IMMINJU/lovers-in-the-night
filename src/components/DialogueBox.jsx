@@ -97,7 +97,7 @@ function DialogueBox() {
       key={currentDialogue.id}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-black/80 backdrop-blur-sm rounded-lg p-6 mb-4 border border-gray-700 cursor-pointer min-h-[180px] sm:min-h-[160px] flex flex-col justify-between"
+      className="bg-black/80 backdrop-blur-sm rounded-lg p-4 md:p-6 mb-4 border border-gray-700 cursor-pointer min-h-[120px] md:min-h-[160px] flex flex-col justify-between"
       onClick={handleClick}
     >
       <div>
@@ -105,7 +105,7 @@ function DialogueBox() {
       </div>
 
       {/* 계속하기 표시 */}
-      <div className="flex justify-end mt-4">
+      <div className="flex justify-end mt-2 md:mt-4">
         {isComplete && (
           <motion.div
             animate={{ opacity: [0.5, 1, 0.5] }}

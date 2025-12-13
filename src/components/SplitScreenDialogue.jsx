@@ -23,12 +23,12 @@ function SplitScreenDialogue({ dialogue }) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3 }}
-          className="absolute left-1/2 bottom-0 -translate-x-1/2"
+          className="absolute left-0 right-0 mx-auto bottom-0 w-fit max-h-[80vh] max-w-[50%]"
         >
           <img
             src={getCharacterImage(left.character, left.expression)}
             alt={left.character}
-            className="h-auto max-h-[90vh] md:max-h-full object-contain drop-shadow-2xl"
+            className="h-auto max-h-full max-w-full object-contain drop-shadow-2xl"
             style={{ mixBlendMode: 'multiply' }}
           />
         </motion.div>
@@ -39,7 +39,7 @@ function SplitScreenDialogue({ dialogue }) {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className="absolute top-8 left-1/2 -translate-x-1/2 max-w-2xl px-4"
+        className="absolute top-8 left-0 right-0 mx-auto w-[90%] max-w-2xl px-4"
       >
         <div className="bg-black/60 backdrop-blur-sm px-6 py-3 rounded-lg border border-purple-400/50">
           <div className="text-purple-200 text-sm italic text-center leading-relaxed">
@@ -54,10 +54,10 @@ function SplitScreenDialogue({ dialogue }) {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="absolute bottom-24 left-1/2 -translate-x-1/2 max-w-3xl px-4"
+          className="absolute bottom-16 md:bottom-24 left-0 right-0 mx-auto w-[90%] max-w-3xl px-4"
         >
-          <div className="bg-black/80 backdrop-blur-md px-8 py-4 rounded-lg border border-yellow-500/80">
-            <div className="text-white text-base text-center leading-relaxed">{left.text}</div>
+          <div className="bg-black/80 backdrop-blur-md px-4 md:px-8 py-3 md:py-4 rounded-lg border border-yellow-500/80">
+            <div className="text-white text-sm md:text-base text-center leading-relaxed">{left.text}</div>
           </div>
         </motion.div>
       )}
