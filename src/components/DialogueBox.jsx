@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 import { useScriptStore } from '../store/scriptStore'
 import { useTypingEffect } from '../hooks/useTypingEffect'
 import NotionUI from './NotionUI'
@@ -14,11 +15,16 @@ function DialogueBox() {
   // system 타입은 자동으로 넘기기
   const isSystemMessage = currentDialogue.type === 'system'
 
+  useEffect(() => {
+    if (isSystemMessage) {
+      const timer = setTimeout(() => {
+        nextDialogue()
+      }, 100)
+      return () => clearTimeout(timer)
+    }
+  }, [isSystemMessage, nextDialogue])
+
   if (isSystemMessage) {
-    // system 메시지는 표시하지 않고 자동으로 다음으로
-    setTimeout(() => {
-      nextDialogue()
-    }, 100)
     return null
   }
 
