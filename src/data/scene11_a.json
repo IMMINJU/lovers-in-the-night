@@ -1,0 +1,132 @@
+{
+  "sceneId": "scene11_a_happy_ending_pre",
+  "title": "A루트 - 새로운 시작",
+  "background": "park",
+  "bgm": "daily",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 1개월 후 ]"
+    },
+    {
+      "id": "d2",
+      "type": "narration",
+      "text": "서준은 컬트를 완전히 탈퇴했다."
+    },
+    {
+      "id": "d3",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "리더한테 말했어. 이제 안 간다고."
+    },
+    {
+      "id": "d4",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "worried",
+      "text": "괜찮아? 뭐라고 안 하던?"
+    },
+    {
+      "id": "d5",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "뭐라고 하든 상관없어. 너만 있으면 돼."
+    },
+    {
+      "id": "d6",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "smile",
+        "text": "(미소)"
+      },
+      "right": {
+        "type": "inner",
+        "text": "...성공했다. 역관광 성공."
+      }
+    },
+    {
+      "id": "d7",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "serious",
+      "text": "서준아, 나도 고백할 게 있어."
+    },
+    {
+      "id": "d8",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "sad",
+      "text": "처음엔... 정말 너를 이용하려고 했어."
+    },
+    {
+      "id": "d9",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "알아."
+    },
+    {
+      "id": "d10",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "surprised",
+      "text": "...알았어?"
+    },
+    {
+      "id": "d11",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "처음부터는 아니고... 중간쯤 눈치챘어."
+    },
+    {
+      "id": "d12",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "하지만 상관없어. 지금은 진짜잖아."
+    },
+    {
+      "id": "d13",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "응... 진짜야."
+    },
+    {
+      "id": "d14",
+      "type": "narration",
+      "text": "둘이 껴안는다."
+    },
+    {
+      "id": "d15",
+      "type": "ui_notion",
+      "tasks": [
+        "미션 완료 ✅",
+        "서준 컬트 탈퇴 성공",
+        "그리고... 진짜 사랑도 얻음"
+      ],
+      "warnings": [],
+      "nextSteps": [
+        "새로운 시작",
+        "정직한 관계",
+        "진짜 연애"
+      ]
+    },
+    {
+      "id": "d16",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "계획에 없던 일이지만... 나쁘지 않아."
+    },
+    {
+      "id": "d17",
+      "type": "narration",
+      "text": "[ 엔딩 ]"
+    }
+  ]
+}

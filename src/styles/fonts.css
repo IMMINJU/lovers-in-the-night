@@ -1,0 +1,60 @@
+/* 빛의 연인 - 폰트 설정 */
+
+/* Pretendard 웹폰트 CDN */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+/* JetBrains Mono (모노스페이스 - UI/숫자용) */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* 제목 폰트 */
+  --font-title: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  /* 본문 폰트 */
+  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  /* UI/숫자 폰트 (노션, 엑셀 등) */
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* 폰트 크기 */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;      /* 48px */
+  --text-6xl: 3.75rem;   /* 60px */
+  --text-7xl: 4.5rem;    /* 72px */
+
+  /* 폰트 굵기 */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+  --font-black: 900;
+
+  /* 행간 */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+}
+
+/* 기본 폰트 적용 */
+body {
+  font-family: var(--font-body);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+}
+
+/* 제목 클래스 */
+.font-title {
+  font-family: var(--font-title);
+  font-weight: var(--font-black);
+}
+
+/* UI 클래스 (노션, 엑셀 등) */
+.font-mono {
+  font-family: var(--font-mono);
+}

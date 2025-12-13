@@ -1,0 +1,238 @@
+{
+  "sceneId": "scene6_cult_meeting",
+  "title": "루미너스 서클 첫 참석",
+  "background": "cult",
+  "bgm": "cult",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 토요일 저녁 7시 ]"
+    },
+    {
+      "id": "d2",
+      "type": "narration",
+      "text": "강남의 한 오피스텔. 10층."
+    },
+    {
+      "id": "d3",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "여긴... 생각보다 고급스러운데?"
+    },
+    {
+      "id": "d4",
+      "type": "narration",
+      "text": "문을 열고 들어서자, 은은한 향초 냄새와 함께 10명 정도의 사람들이 앉아있다."
+    },
+    {
+      "id": "d5",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "지우씨! 왔네요. 여기 앉으세요."
+    },
+    {
+      "id": "d6",
+      "type": "narration",
+      "text": "서준이 자신의 옆자리를 가리킨다."
+    },
+    {
+      "id": "d7",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "smile",
+      "text": "환영합니다. 새로운 친구네요."
+    },
+    {
+      "id": "d8",
+      "type": "narration",
+      "text": "40대 중반으로 보이는 남자가 온화하게 웃는다."
+    },
+    {
+      "id": "d9",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "normal",
+      "text": "오늘은 '내면의 빛'에 대해 이야기할 거예요."
+    },
+    {
+      "id": "d10",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "normal",
+        "text": "(고개 끄덕이며 경청)"
+      },
+      "right": {
+        "type": "inner",
+        "text": "전형적인 자기계발 + 영적 컬트 믹스. 예상대로."
+      }
+    },
+    {
+      "id": "d11",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "smile",
+      "text": "우리는 모두 빛을 품고 태어났어요. 하지만 세상의 어둠이 그걸 가렸죠."
+    },
+    {
+      "id": "d12",
+      "type": "dialogue",
+      "character": "멤버1",
+      "expression": "sad",
+      "text": "저는... 최근에 이혼했어요. 너무 힘들었는데..."
+    },
+    {
+      "id": "d13",
+      "type": "dialogue",
+      "character": "멤버1",
+      "expression": "smile",
+      "text": "여기 오고 나서 빛을 찾았어요. 감사합니다."
+    },
+    {
+      "id": "d14",
+      "type": "narration",
+      "text": "[ 박수 소리 ]"
+    },
+    {
+      "id": "d15",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "취약한 사람들을 타겟으로 하는구나."
+    },
+    {
+      "id": "d16",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "smile",
+      "text": "새로 오신 분, 자기소개 해주실래요?"
+    },
+    {
+      "id": "d17",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "...왔다. 여기서 어떻게 연기하느냐가 중요해."
+    },
+    {
+      "id": "choice1",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "c1_1",
+          "text": "\"저는... 요즘 삶의 의미를 찾고 있어요\"",
+          "affection": 12,
+          "suspicion": 6,
+          "reverseSuspicion": 5,
+          "nextDialogue": "d18_1"
+        },
+        {
+          "id": "c1_2",
+          "text": "\"그냥... 서준씨 따라왔어요\"",
+          "affection": 6,
+          "suspicion": 3,
+          "reverseSuspicion": 8,
+          "nextDialogue": "d18_2"
+        },
+        {
+          "id": "c1_3",
+          "text": "\"요즘 외로웠는데, 좋은 분들 만나고 싶어서요\"",
+          "affection": 9,
+          "suspicion": 4,
+          "reverseSuspicion": 4,
+          "nextDialogue": "d18_3"
+        }
+      ]
+    },
+    {
+      "id": "d18_1",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d18_2",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d18_3",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d19",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "smile",
+      "text": "좋아요. 우린 당신의 빛을 찾아줄 거예요."
+    },
+    {
+      "id": "d20",
+      "type": "narration",
+      "text": "[ 2시간 후, 모임 종료 ]"
+    },
+    {
+      "id": "d21",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "어땠어요?"
+    },
+    {
+      "id": "d22",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "생각보다... 좋았어요."
+    },
+    {
+      "id": "d23",
+      "type": "split_screen",
+      "left": {
+        "character": "서준",
+        "expression": "smile",
+        "text": "\"다행이네요. 다음에도 올 거죠?\""
+      },
+      "right": {
+        "type": "inner",
+        "text": "그의 미소. 승리한 사람 같아."
+      }
+    },
+    {
+      "id": "d24",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "응... 올게요."
+    },
+    {
+      "id": "d25",
+      "type": "narration",
+      "text": "[ 집으로 돌아가는 길 ]"
+    },
+    {
+      "id": "d26",
+      "type": "system",
+      "text": "background_change:street"
+    },
+    {
+      "id": "d27",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "이제 본격적으로 시작이다."
+    },
+    {
+      "id": "d28",
+      "type": "ui_excel",
+      "character": "서준",
+      "data": [
+        ["날짜", "활동", "지우 반응", "평가"],
+        ["Week 1", "카페 첫 만남", "호의적", "A"],
+        ["Week 2", "한강 데이트", "긍정적", "A"],
+        ["Week 3", "컬트 초대", "수락", "S"],
+        ["Week 4", "첫 참석", "적극적", "S+"]
+      ],
+      "note": "예상보다 빠른 진행. 다음 주 개인 상담 제안 예정."
+    }
+  ]
+}

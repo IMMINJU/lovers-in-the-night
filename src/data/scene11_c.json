@@ -1,0 +1,182 @@
+{
+  "sceneId": "scene11_c_absurd_romance",
+  "title": "C루트 - 병맛 로맨스 완성",
+  "background": "park",
+  "bgm": "comedy",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 1개월 후, 한강 ]"
+    },
+    {
+      "id": "d2",
+      "type": "narration",
+      "text": "둘이 손잡고 걷는다. 여전히 서로를 의심하면서."
+    },
+    {
+      "id": "d3",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "지우야~ 오늘 날씨 좋다~"
+    },
+    {
+      "id": "d4",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "smile",
+        "text": "\"그러게~ 완전 좋아~\""
+      },
+      "right": {
+        "type": "inner",
+        "text": "(아직도 연기 중)"
+      }
+    },
+    {
+      "id": "d5",
+      "type": "split_screen",
+      "left": {
+        "character": "서준",
+        "expression": "smile",
+        "text": ""
+      },
+      "right": {
+        "type": "inner",
+        "text": "(나도 아직 연기 중)"
+      }
+    },
+    {
+      "id": "d6",
+      "type": "narration",
+      "text": "하지만 어느새 손은 꽉 잡고 있다."
+    },
+    {
+      "id": "d7",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "curious",
+      "text": "서준아... 우리 지금 뭐야?"
+    },
+    {
+      "id": "d8",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "confused",
+      "text": "...글쎄? 나도 모르겠어."
+    },
+    {
+      "id": "d9",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "연기하는 거야? 진짜야?"
+    },
+    {
+      "id": "d10",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "나도 모르겠어. 너는?"
+    },
+    {
+      "id": "d11",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "나도 모르겠어."
+    },
+    {
+      "id": "d12",
+      "type": "narration",
+      "text": "[ 동시에 웃는다 ]"
+    },
+    {
+      "id": "d13",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "이거... 진짜 병맛이다."
+    },
+    {
+      "id": "d14",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "완전 병맛이지."
+    },
+    {
+      "id": "d15",
+      "type": "split_screen",
+      "left": {
+        "character": "서준",
+        "expression": "smile",
+        "text": "\"그래도... 재밌어\""
+      },
+      "right": {
+        "character": "지우",
+        "expression": "smile",
+        "text": "\"나도\""
+      }
+    },
+    {
+      "id": "d16",
+      "type": "narration",
+      "text": "둘 다 키스한다. 이게 연기인지 진심인지 모르면서."
+    },
+    {
+      "id": "d17",
+      "type": "ui_notion",
+      "tasks": [
+        "서준 포섭 성공... 인가?",
+        "아니면 내가 포섭당한 건가?",
+        "아니면 둘 다?"
+      ],
+      "warnings": [
+        "진짜인지 가짜인지 모름",
+        "하지만 행복함",
+        "이게 사랑인가?"
+      ],
+      "nextSteps": [
+        "계속 만나기",
+        "계속 의심하기",
+        "하지만... 계속 사랑하기?"
+      ]
+    },
+    {
+      "id": "d18",
+      "type": "ui_excel",
+      "character": "서준",
+      "data": [
+        ["항목", "진실", "거짓", "불명"],
+        ["나의 감정", "?", "?", "100%"],
+        ["지우의 감정", "?", "?", "100%"],
+        ["우리 관계", "?", "?", "100%"],
+        ["결론", "모름", "모름", "그래도 행복"]
+      ],
+      "note": "...이게 사랑이면 사랑이고, 전쟁이면 전쟁이다. 뭐 어때."
+    },
+    {
+      "id": "d19",
+      "type": "narration",
+      "text": "계산적으로 시작했지만, 어느새 진짜가 되어버린 관계."
+    },
+    {
+      "id": "d20",
+      "type": "narration",
+      "text": "아무도 승리하지 못했지만, 둘 다 행복하다."
+    },
+    {
+      "id": "d21",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "병맛이긴 한데... 나쁘지 않네."
+    },
+    {
+      "id": "d22",
+      "type": "narration",
+      "text": "[ 엔딩 ]"
+    }
+  ]
+}

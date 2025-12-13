@@ -1,0 +1,171 @@
+{
+  "sceneId": "scene11_b_stalemate",
+  "title": "B루트 - 무승부",
+  "background": "cafe",
+  "bgm": "tension",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 1개월 후, 카페 ]"
+    },
+    {
+      "id": "d2",
+      "type": "narration",
+      "text": "둘이 마주 앉아있다. 이제는 서로를 완전히 안다."
+    },
+    {
+      "id": "d3",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "그래서... 이제 어쩔 거예요?"
+    },
+    {
+      "id": "d4",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "글쎄요. 서준씨는?"
+    },
+    {
+      "id": "d5",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "normal",
+      "text": "전 컷트 안 그만둘 거예요."
+    },
+    {
+      "id": "d6",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "normal",
+      "text": "전 서준씨 포기 안 할 거예요."
+    },
+    {
+      "id": "d7",
+      "type": "split_screen",
+      "left": {
+        "character": "서준",
+        "expression": "smile",
+        "text": "(웃음)"
+      },
+      "right": {
+        "character": "지우",
+        "expression": "smile",
+        "text": "(웃음)"
+      }
+    },
+    {
+      "id": "d8",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "그럼... 계속하는 거네요. 이 게임."
+    },
+    {
+      "id": "d9",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "그런 것 같네요."
+    },
+    {
+      "id": "d10",
+      "type": "narration",
+      "text": "둘 다 승리하지 못했다. 하지만 패배하지도 않았다."
+    },
+    {
+      "id": "d11",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "그래도... 재밌었어요."
+    },
+    {
+      "id": "d12",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "저도요."
+    },
+    {
+      "id": "d13",
+      "type": "split_screen",
+      "left": {
+        "character": "서준",
+        "expression": "normal",
+        "text": ""
+      },
+      "right": {
+        "type": "inner",
+        "text": "이 여자... 진짜 프로야. 존경스럽기까지 해."
+      }
+    },
+    {
+      "id": "d14",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "normal",
+        "text": ""
+      },
+      "right": {
+        "type": "inner",
+        "text": "이 남자... 내가 만난 사람 중 최고야."
+      }
+    },
+    {
+      "id": "d15",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "다음 주에도 볼까요?"
+    },
+    {
+      "id": "d16",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "당연하죠."
+    },
+    {
+      "id": "d17",
+      "type": "ui_excel",
+      "character": "서준",
+      "data": [
+        ["결과", "상태"],
+        ["컬트 포섭", "실패"],
+        ["역포섭 차단", "성공"],
+        ["지우와의 관계", "무승부"],
+        ["최종 평가", "프로의 벽"]
+      ],
+      "note": "둘 다 이기지 못했다. 하지만... 이것도 나쁘지 않아."
+    },
+    {
+      "id": "d18",
+      "type": "ui_notion",
+      "tasks": [
+        "서준 컬트 탈퇴 실패 ❌",
+        "하지만 서준도 나를 포섭 실패",
+        "무한 게임 시작"
+      ],
+      "warnings": [],
+      "nextSteps": [
+        "계속 만나기",
+        "계속 싸우기",
+        "계속... 즐기기?"
+      ]
+    },
+    {
+      "id": "d19",
+      "type": "narration",
+      "text": "프로와 프로의 대결. 승자도 패자도 없다."
+    },
+    {
+      "id": "d20",
+      "type": "narration",
+      "text": "[ 엔딩 ]"
+    }
+  ]
+}

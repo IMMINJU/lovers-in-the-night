@@ -1,0 +1,259 @@
+{
+  "sceneId": "scene10_c_chicken_game",
+  "title": "C루트 - 치킨게임 절정",
+  "background": "cafe",
+  "bgm": "comedy",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 2주 후, 카페 ]"
+    },
+    {
+      "id": "d2",
+      "type": "narration",
+      "text": "둘 다 서로를 의심하지만, 확신은 없다."
+    },
+    {
+      "id": "d3",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "smile",
+        "text": "\"서준아~ 오늘 뭐 할까?\""
+      },
+      "right": {
+        "type": "inner",
+        "text": "(연기 모드 100% 가동)"
+      }
+    },
+    {
+      "id": "d4",
+      "type": "split_screen",
+      "left": {
+        "character": "서준",
+        "expression": "smile",
+        "text": "\"지우가 좋은 데 가자~\""
+      },
+      "right": {
+        "type": "inner",
+        "text": "(나도 연기 모드 100% 가동)"
+      }
+    },
+    {
+      "id": "d5",
+      "type": "narration",
+      "text": "서로를 테스트하기 위한 질문 공방."
+    },
+    {
+      "id": "d6",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "normal",
+      "text": "지우야, 우리 언제 처음 만났더라?"
+    },
+    {
+      "id": "d7",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "기억력 테스트? 쉽지."
+    },
+    {
+      "id": "d8",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "4주 전, 카페에서. 그때 네가 아메리카노 마시고 있었지."
+    },
+    {
+      "id": "d9",
+      "type": "split_screen",
+      "left": {
+        "character": "서준",
+        "expression": "smile",
+        "text": "\"기억력 좋네~\""
+      },
+      "right": {
+        "type": "inner",
+        "text": "...너무 완벽해. 역시 수상해."
+      }
+    },
+    {
+      "id": "d10",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "서준아, 나한테 뭐 물어볼 거 없어?"
+    },
+    {
+      "id": "d11",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "역으로 압박해보자."
+    },
+    {
+      "id": "d12",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "normal",
+      "text": "음... 가족 관계 어때?"
+    },
+    {
+      "id": "d13",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "Scene7 답변 기억해야 해!"
+    },
+    {
+      "id": "d14",
+      "type": "inference",
+      "question": "Scene7에서 한 가족 관계 대답을 기억하라",
+      "timeLimit": 15,
+      "clues": [
+        "모순되면 들통남",
+        "Scene7 선택 떠올리기",
+        "일관성이 생명"
+      ],
+      "options": [
+        {
+          "id": "family_bad",
+          "text": "\"별로 좋지 않아...\"",
+          "checkConsistency": {
+            "category": "family",
+            "value": "bad"
+          }
+        },
+        {
+          "id": "family_normal",
+          "text": "\"그냥 평범해\"",
+          "checkConsistency": {
+            "category": "family",
+            "value": "normal"
+          }
+        },
+        {
+          "id": "family_good",
+          "text": "\"좋은 편이야\"",
+          "checkConsistency": {
+            "category": "family",
+            "value": "good"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d15",
+      "type": "split_screen",
+      "left": {
+        "character": "서준",
+        "expression": "smile",
+        "text": "(만족스러운 표정)"
+      },
+      "right": {
+        "type": "inner",
+        "text": "...일치하네. 완벽한 기억력. 수상해."
+      }
+    },
+    {
+      "id": "d16",
+      "type": "narration",
+      "text": "둘 다 서로를 의심하지만, 증거가 없다."
+    },
+    {
+      "id": "d17",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "지우야... 나 진짜 좋아해?"
+    },
+    {
+      "id": "d18",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "당연하지. 서준이는?"
+    },
+    {
+      "id": "d19",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "나도."
+    },
+    {
+      "id": "d20",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "smile",
+        "text": ""
+      },
+      "right": {
+        "type": "inner",
+        "text": "(거짓말 같은데...)"
+      }
+    },
+    {
+      "id": "d21",
+      "type": "split_screen",
+      "left": {
+        "character": "서준",
+        "expression": "smile",
+        "text": ""
+      },
+      "right": {
+        "type": "inner",
+        "text": "(거짓말 같은데...)"
+      }
+    },
+    {
+      "id": "d22",
+      "type": "narration",
+      "text": "하지만 둘 다 손을 잡고 있다."
+    },
+    {
+      "id": "d23",
+      "type": "narration",
+      "text": "이 관계가 진짜인지 가짜인지, 둘 다 모른다."
+    },
+    {
+      "id": "d24",
+      "type": "ui_notion",
+      "character": "지우",
+      "tasks": [
+        "연기 유지 중",
+        "서준도 의심 중",
+        "하지만 증거 없음"
+      ],
+      "warnings": [
+        "!! 치킨게임 최고조 !!",
+        "누가 먼저 항복?",
+        "아니면 이대로 계속?"
+      ],
+      "nextSteps": [
+        "???",
+        "진짜 감정인가?",
+        "아직도 연기인가?"
+      ]
+    },
+    {
+      "id": "d25",
+      "type": "ui_excel",
+      "character": "서준",
+      "data": [
+        ["상황", "분석", "확률"],
+        ["지우의 진심", "불명", "50%"],
+        ["나의 진심", "불명", "50%"],
+        ["둘 다 연기", "가능", "40%"],
+        ["둘 다 진심", "가능", "40%"],
+        ["결론", "모르겠음", "100%"]
+      ],
+      "note": "...이게 사랑인가, 전쟁인가?"
+    },
+    {
+      "id": "d26",
+      "type": "narration",
+      "text": "[ 엔딩으로... ]"
+    }
+  ]
+}

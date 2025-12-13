@@ -1,0 +1,247 @@
+{
+  "sceneId": "scene5_cafe_second",
+  "title": "두 번째 카페 만남",
+  "background": "cafe",
+  "bgm": "daily",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 수요일 오후, 같은 카페 ]"
+    },
+    {
+      "id": "d2",
+      "type": "narration",
+      "text": "서준이 먼저 와 있다."
+    },
+    {
+      "id": "d3",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "안녕하세요! 오랜만이에요."
+    },
+    {
+      "id": "d4",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "그러게요. 요즘 어떠세요?"
+    },
+    {
+      "id": "d5",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "normal",
+      "text": "음... 지난번에 말한 그 모임 있잖아요."
+    },
+    {
+      "id": "d6",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "이번 주 토요일에 작은 모임이 있는데, 같이 갈래요?"
+    },
+    {
+      "id": "d7",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "본격적인 초대가 들어왔다."
+    },
+    {
+      "id": "choice1",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "c1_1",
+          "text": "\"좋아요! 가볼게요\"",
+          "affection": 10,
+          "suspicion": 5,
+          "reverseSuspicion": 4,
+          "nextDialogue": "d8_1"
+        },
+        {
+          "id": "c1_2",
+          "text": "\"음... 토요일에 일이 있을 수도 있는데...\"",
+          "affection": 3,
+          "suspicion": 3,
+          "reverseSuspicion": 7,
+          "nextDialogue": "d8_2"
+        },
+        {
+          "id": "c1_3",
+          "text": "\"어떤 모임인지 좀 더 알려주실래요?\"",
+          "affection": 5,
+          "suspicion": 4,
+          "reverseSuspicion": 5,
+          "nextDialogue": "d8_3"
+        }
+      ]
+    },
+    {
+      "id": "d8_1",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d8_2",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d8_3",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d9",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "별거 아니에요. 같이 책 읽고 이야기 나누는 거예요."
+    },
+    {
+      "id": "d10",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "curious",
+      "text": "무슨 책이요?"
+    },
+    {
+      "id": "d11",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "normal",
+      "text": "빛과 어둠에 대한 철학책이요. 재밌어요."
+    },
+    {
+      "id": "d12",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "smile",
+        "text": "\"오~ 철학 좋아해요\""
+      },
+      "right": {
+        "type": "inner",
+        "text": "빛과 어둠... 전형적인 컬트 레토릭."
+      }
+    },
+    {
+      "id": "d13",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "지우씨는 평소에 무슨 책 읽으세요?"
+    },
+    {
+      "id": "d14",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "취향 질문. 기록해둘 것."
+    },
+    {
+      "id": "choice2",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "c2_1",
+          "text": "\"에세이 좋아해요. 가볍게 읽을 수 있는 거\"",
+          "affection": 4,
+          "suspicion": 2,
+          "track": {
+            "category": "hobby",
+            "value": "essay"
+          },
+          "nextDialogue": "d15_1"
+        },
+        {
+          "id": "c2_2",
+          "text": "\"심리학이나 철학책 자주 읽어요\"",
+          "affection": 8,
+          "suspicion": 3,
+          "track": {
+            "category": "hobby",
+            "value": "philosophy"
+          },
+          "nextDialogue": "d15_2"
+        },
+        {
+          "id": "c2_3",
+          "text": "\"요즘엔 잘 안 읽어요. 영화 보는 게 더 좋아요\"",
+          "affection": 5,
+          "suspicion": 4,
+          "track": {
+            "category": "hobby",
+            "value": "movies"
+          },
+          "nextDialogue": "d15_3"
+        }
+      ]
+    },
+    {
+      "id": "d15_1",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d15_2",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d15_3",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d16",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "그럼 토요일에 뵐게요. 주소 보낼게요."
+    },
+    {
+      "id": "d17",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "네!"
+    },
+    {
+      "id": "d18",
+      "type": "narration",
+      "text": "[ 그날 밤 ]"
+    },
+    {
+      "id": "d19",
+      "type": "system",
+      "text": "background_change:room"
+    },
+    {
+      "id": "d20",
+      "type": "ui_notion",
+      "tasks": [
+        "컬트 모임 초대 수락 ✅",
+        "서준의 취향 정보 수집 중",
+        "모임 장소 정보 입수 예정"
+      ],
+      "warnings": [
+        "토요일 - 루미너스 서클 첫 참석",
+        "다른 멤버들과의 상호작용 주의",
+        "서준이 지켜볼 것 - 연기력 중요"
+      ],
+      "nextSteps": [
+        "컬트 모임 사전 조사",
+        "연기 시나리오 준비",
+        "비상 탈출구 확인"
+      ]
+    },
+    {
+      "id": "d21",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "드디어 들어간다. 루미너스 서클."
+    }
+  ]
+}

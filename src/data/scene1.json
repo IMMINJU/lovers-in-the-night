@@ -1,0 +1,149 @@
+{
+  "sceneId": "scene1_opening_montage",
+  "title": "준비 과정",
+  "background": "room",
+  "bgm": "tension",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 3주 전 ]"
+    },
+    {
+      "id": "d2",
+      "type": "system",
+      "text": "background_change:room"
+    },
+    {
+      "id": "d3",
+      "type": "narration",
+      "text": "침대에 누워 핸드폰을 보는 지우."
+    },
+    {
+      "id": "d4",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "...잘생겼네."
+    },
+    {
+      "id": "d5",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "인스타 127개 게시물 전부 확인. 좋아하는 음악, 자주 가는 카페, 출퇴근 동선까지."
+    },
+    {
+      "id": "d6",
+      "type": "ui_notion",
+      "tasks": [
+        "타겟 SNS 분석 완료",
+        "출퇴근 동선 파악 완료",
+        "자주 가는 카페 3곳 리스트업"
+      ],
+      "warnings": [
+        "직장 정보 불명확 - 추가 조사 필요",
+        "친구 관계 적음 - 외로움 활용 가능"
+      ],
+      "nextSteps": [
+        "우연한 만남 연출하기",
+        "첫 대화에서 호감 얻기",
+        "인스타 팔로우 받기"
+      ]
+    },
+    {
+      "id": "d7",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "3주간의 준비가 끝났다."
+    },
+    {
+      "id": "d8",
+      "type": "narration",
+      "text": "[ D-day ]"
+    },
+    {
+      "id": "d9",
+      "type": "narration",
+      "text": "지우는 거울 앞에 선다."
+    },
+    {
+      "id": "d10",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "smile",
+        "text": "(거울 보며 밝게 웃는 연습)"
+      },
+      "right": {
+        "type": "inner",
+        "text": "...병신같네. 근데 이게 먹혀."
+      }
+    },
+    {
+      "id": "d11",
+      "type": "narration",
+      "text": "화장을 고치고, 옷을 다시 입어본다."
+    },
+    {
+      "id": "d12",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "너무 꾸민 티 나면 안 돼. 자연스럽게."
+    },
+    {
+      "id": "d13",
+      "type": "narration",
+      "text": "상의 단추 하나를 더 풀었다."
+    },
+    {
+      "id": "d14",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "완벽해."
+    },
+    {
+      "id": "d15",
+      "type": "narration",
+      "text": "[ 오후 2시 50분 - 카페 앞 ]"
+    },
+    {
+      "id": "d16",
+      "type": "narration",
+      "text": "지우는 카페 밖에서 담배를 피운다."
+    },
+    {
+      "id": "d17",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "10분 뒤에 들어간다. 3시 정각에 그가 도착한다는 건 지난주 목요일에 확인했어."
+    },
+    {
+      "id": "d18",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "serious",
+        "text": "(담배 끄며 심호흡)"
+      },
+      "right": {
+        "type": "inner",
+        "text": "긴장하지 마. 그냥... 우연히 만난 것처럼."
+      }
+    },
+    {
+      "id": "d19",
+      "type": "narration",
+      "text": "[ 오후 3시 ]"
+    },
+    {
+      "id": "d20",
+      "type": "narration",
+      "text": "지우는 카페 안으로 들어간다."
+    },
+    {
+      "id": "d21",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "자, 시작이다."
+    }
+  ]
+}

@@ -1,0 +1,361 @@
+{
+  "sceneId": "scene7_private_counseling",
+  "title": "개인 상담",
+  "background": "cult",
+  "bgm": "tension",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 2주 후, 같은 장소 ]"
+    },
+    {
+      "id": "d2",
+      "type": "narration",
+      "text": "모임이 끝나고, 서준이 지우를 불러 세운다."
+    },
+    {
+      "id": "d3",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "normal",
+      "text": "지우씨, 잠깐 이야기 좀 할까요?"
+    },
+    {
+      "id": "d4",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "curious",
+      "text": "무슨 일이에요?"
+    },
+    {
+      "id": "d5",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "리더님이 지우씨를 개인 상담하고 싶대요."
+    },
+    {
+      "id": "d6",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "개인 상담... 본격적인 포섭 2단계."
+    },
+    {
+      "id": "d7",
+      "type": "narration",
+      "text": "리더가 작은 방으로 안내한다."
+    },
+    {
+      "id": "d8",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "smile",
+      "text": "지우씨, 요즘 모임에 열심히 오시더라고요."
+    },
+    {
+      "id": "d9",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "좋은 분들이라... 편해요."
+    },
+    {
+      "id": "d10",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "normal",
+      "text": "지우씨는... 가족 관계가 어때요?"
+    },
+    {
+      "id": "d11",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "가족 이야기. 취약점을 찾는 질문이야."
+    },
+    {
+      "id": "choice1",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "c1_1",
+          "text": "\"별로 좋지 않아요... 연락 안 한 지 오래됐어요\"",
+          "affection": 10,
+          "suspicion": 4,
+          "track": {
+            "category": "family",
+            "value": "bad"
+          },
+          "nextDialogue": "d12_1"
+        },
+        {
+          "id": "c1_2",
+          "text": "\"평범해요. 그냥 보통이요\"",
+          "affection": 5,
+          "suspicion": 5,
+          "track": {
+            "category": "family",
+            "value": "normal"
+          },
+          "nextDialogue": "d12_2"
+        },
+        {
+          "id": "c1_3",
+          "text": "\"좋은 편이에요. 가끔 통화해요\"",
+          "affection": 3,
+          "suspicion": 8,
+          "reverseSuspicion": 6,
+          "track": {
+            "category": "family",
+            "value": "good"
+          },
+          "nextDialogue": "d12_3"
+        }
+      ]
+    },
+    {
+      "id": "d12_1",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d12_2",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d12_3",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d13",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "smile",
+      "text": "우리가 진짜 가족이 되어줄 수 있어요."
+    },
+    {
+      "id": "d14",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "normal",
+      "text": "그런데... 일은 잘 되고 있어요?"
+    },
+    {
+      "id": "d15",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "직업 질문 또 나왔다. Scene4 답변과 일치시켜야 해."
+    },
+    {
+      "id": "d16",
+      "type": "inference",
+      "question": "Scene4에서 한 직업 대답을 기억하라",
+      "timeLimit": 20,
+      "clues": [
+        "일관성이 중요함",
+        "모순되면 의심도 급상승",
+        "Scene4 선택을 떠올려라"
+      ],
+      "options": [
+        {
+          "id": "job_designer",
+          "text": "\"디자인 일 잘 되고 있어요\"",
+          "checkConsistency": {
+            "category": "job",
+            "value": "designer"
+          }
+        },
+        {
+          "id": "job_unemployed",
+          "text": "\"아직 이직 준비 중이에요\"",
+          "checkConsistency": {
+            "category": "job",
+            "value": "unemployed"
+          }
+        },
+        {
+          "id": "job_vague",
+          "text": "\"일보다 중요한 게 많죠\"",
+          "checkConsistency": {
+            "category": "job",
+            "value": "vague"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d17",
+      "type": "narration",
+      "text": "[ 상담 종료 ]"
+    },
+    {
+      "id": "d18",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "smile",
+      "text": "다음 주에 특별 프로그램이 있어요. 꼭 오세요."
+    },
+    {
+      "id": "d19",
+      "type": "narration",
+      "text": "방을 나오자, 서준이 기다리고 있다."
+    },
+    {
+      "id": "d20",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "어땠어요?"
+    },
+    {
+      "id": "d21",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "smile",
+        "text": "\"좋았어요. 리더님이 따뜻하시네요\""
+      },
+      "right": {
+        "type": "inner",
+        "text": "따뜻하긴. 전형적인 마인드 컨트롤이지."
+      }
+    },
+    {
+      "id": "d22",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "normal",
+      "text": "저랑... 커피 한 잔 더 할래요?"
+    },
+    {
+      "id": "d23",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "개인 시간. 좋아."
+    },
+    {
+      "id": "d24",
+      "type": "narration",
+      "text": "[ 근처 카페 ]"
+    },
+    {
+      "id": "d25",
+      "type": "system",
+      "text": "background_change:cafe"
+    },
+    {
+      "id": "d26",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "normal",
+      "text": "지우씨는... 이 모임에 대해 어떻게 생각해요?"
+    },
+    {
+      "id": "d27",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "c2_1",
+          "text": "\"정말 좋아요. 여기서 위안을 얻어요\"",
+          "affection": 12,
+          "suspicion": 7,
+          "reverseSuspicion": 6,
+          "nextDialogue": "d28_1"
+        },
+        {
+          "id": "c2_2",
+          "text": "\"좋은 것 같아요. 아직은 적응 중이지만\"",
+          "affection": 7,
+          "suspicion": 3,
+          "reverseSuspicion": 4,
+          "nextDialogue": "d28_2"
+        },
+        {
+          "id": "c2_3",
+          "text": "\"솔직히 아직 잘 모르겠어요\"",
+          "affection": 3,
+          "suspicion": 8,
+          "reverseSuspicion": 9,
+          "nextDialogue": "d28_3"
+        }
+      ]
+    },
+    {
+      "id": "d28_1",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d28_2",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d28_3",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d29",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "천천히 알아가면 돼요."
+    },
+    {
+      "id": "d30",
+      "type": "narration",
+      "text": "서준의 손이 테이블 위 지우의 손에 살짝 닿는다."
+    },
+    {
+      "id": "d31",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "shy",
+        "text": "(손을 빼지 않는다)"
+      },
+      "right": {
+        "type": "inner",
+        "text": "이건... 컬트 포섭인가, 진짜 호감인가?"
+      }
+    },
+    {
+      "id": "d32",
+      "type": "narration",
+      "text": "[ 그날 밤 ]"
+    },
+    {
+      "id": "d33",
+      "type": "system",
+      "text": "background_change:room"
+    },
+    {
+      "id": "d34",
+      "type": "ui_notion",
+      "tasks": [
+        "개인 상담 통과 ✅",
+        "리더와 1:1 대화 완료",
+        "서준과 스킨십 2단계 진입"
+      ],
+      "warnings": [
+        "리더가 가족 관계 탐색 중 - 취약점 찾기",
+        "서준의 태도가 점점 더 적극적",
+        "역의심도 상승 중 - 내가 너무 쉽게 넘어가는 건 아닌가?"
+      ],
+      "nextSteps": [
+        "특별 프로그램 참석",
+        "서준과의 관계 진전",
+        "컬트 내부 정보 수집"
+      ]
+    },
+    {
+      "id": "d35",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "위험하다. 하지만... 재밌어."
+    }
+  ]
+}

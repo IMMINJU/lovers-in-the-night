@@ -1,0 +1,144 @@
+{
+  "sceneId": "scene9_b_suspicion_route",
+  "title": "B루트 - 서준이 의심하다",
+  "background": "cult",
+  "bgm": "tension",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 1주일 후, 컬트 모임 ]"
+    },
+    {
+      "id": "d2",
+      "type": "narration",
+      "text": "서준이 지우를 차갑게 쳐다본다."
+    },
+    {
+      "id": "d3",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "지우씨, 잠깐 나와요."
+    },
+    {
+      "id": "d4",
+      "type": "narration",
+      "text": "빈 복도로 나온다."
+    },
+    {
+      "id": "d5",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "뭔가... 이상해요."
+    },
+    {
+      "id": "d6",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "surprised",
+      "text": "...무슨 말이에요?"
+    },
+    {
+      "id": "d7",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "지우씨, 너무 완벽해요. 너무 잘 맞춰요."
+    },
+    {
+      "id": "d8",
+      "type": "split_screen",
+      "left": {
+        "character": "서준",
+        "expression": "serious",
+        "text": "\"사람이 그렇게 완벽할 수가 없어요.\""
+      },
+      "right": {
+        "type": "inner",
+        "text": "...들켰나?"
+      }
+    },
+    {
+      "id": "d9",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "여기서 어떻게 대응하느냐가 승부처다."
+    },
+    {
+      "id": "choice1",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "c1_1",
+          "text": "\"무슨 소리예요? 전 그냥...\" (부정)",
+          "affection": 3,
+          "suspicion": 15,
+          "nextDialogue": "d10_deny"
+        },
+        {
+          "id": "c1_2",
+          "text": "\"...서준씨가 좋아서 노력한 거예요\" (감정 호소)",
+          "affection": 8,
+          "suspicion": 10,
+          "nextDialogue": "d10_emotion"
+        },
+        {
+          "id": "c1_3",
+          "text": "(침묵)",
+          "affection": 4,
+          "suspicion": 12,
+          "reverseSuspicion": 10,
+          "nextDialogue": "d10_silence"
+        }
+      ]
+    },
+    {
+      "id": "d10_deny",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d10_emotion",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d10_silence",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d11",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "...아직 확신은 없어요. 하지만 지켜볼 거예요."
+    },
+    {
+      "id": "d12",
+      "type": "narration",
+      "text": "서준이 돌아간다."
+    },
+    {
+      "id": "d13",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "위험하다. 이 사람, 진짜로 프로야."
+    },
+    {
+      "id": "d14",
+      "type": "ui_excel",
+      "character": "서준",
+      "data": [
+        ["의심 포인트", "내용", "확률", "대응"],
+        ["반응 속도", "너무 빠름", "70%", "관찰"],
+        ["선택 패턴", "너무 최적화", "65%", "테스트"],
+        ["감정 표현", "계산적", "80%", "추가 검증"],
+        ["종합", "역포섭 가능성", "72%", "경계 강화"]
+      ],
+      "note": "지우, 너도 나를 이용하려는 거지?"
+    }
+  ]
+}

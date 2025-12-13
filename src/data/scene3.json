@@ -1,0 +1,322 @@
+{
+  "sceneId": "scene3_instagram_dm",
+  "title": "인스타 DM 공방전",
+  "background": null,
+  "bgm": "comedy",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 그날 밤, 오후 9시 ]"
+    },
+    {
+      "id": "d2",
+      "type": "system",
+      "text": "background_change:room"
+    },
+    {
+      "id": "d3",
+      "type": "narration",
+      "text": "침대에 누워 핸드폰을 보는 지우."
+    },
+    {
+      "id": "d4",
+      "type": "narration",
+      "text": "[ 알림 ]"
+    },
+    {
+      "id": "d5",
+      "type": "narration",
+      "text": "@seojun_lc 님이 메시지를 보냈습니다."
+    },
+    {
+      "id": "d6",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "...왔다."
+    },
+    {
+      "id": "d7",
+      "type": "narration",
+      "text": "지우는 메시지를 열지 않고 잠시 기다린다."
+    },
+    {
+      "id": "d8",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "serious",
+        "text": "(핸드폰 내려놓고 천장 응시)"
+      },
+      "right": {
+        "type": "inner",
+        "text": "즉시 확인하면 너무 티 난다. 3분... 아니, 5분 후에 본다."
+      }
+    },
+    {
+      "id": "d9",
+      "type": "narration",
+      "text": "[ 5분 경과 ]"
+    },
+    {
+      "id": "d10",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "좋아. 지금."
+    },
+    {
+      "id": "d11",
+      "type": "narration",
+      "text": "[ DM 내용 ]"
+    },
+    {
+      "id": "d12",
+      "type": "dialogue",
+      "character": "서준",
+      "text": "안녕하세요! 오늘 카페에서 우연히 만났던 서준입니다 ㅎㅎ"
+    },
+    {
+      "id": "d13",
+      "type": "dialogue",
+      "character": "서준",
+      "text": "대화 즐거웠어요. 또 연락하고 싶어서 메시지 보냅니다 😊"
+    },
+    {
+      "id": "d14",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "...이모티콘. 웃는 얼굴."
+    },
+    {
+      "id": "d15",
+      "type": "inference",
+      "question": "답장에 어떤 이모티콘을 사용할까?",
+      "timeLimit": 30,
+      "clues": [
+        "서준이 웃는 얼굴 이모티콘 사용",
+        "너무 적극적이면 의심받을 수 있음",
+        "하지만 너무 차갑게 반응하면 호감도 하락"
+      ],
+      "options": [
+        {
+          "id": "emoji_heart",
+          "emoji": "💕",
+          "text": "하트 이모티콘 - 적극적 호감 표시",
+          "correctAnswer": false
+        },
+        {
+          "id": "emoji_smile",
+          "emoji": "😊",
+          "text": "같은 웃는 얼굴 - 무난하고 안전",
+          "correctAnswer": true
+        },
+        {
+          "id": "emoji_none",
+          "emoji": "📝",
+          "text": "이모티콘 없이 - 쿨한 이미지",
+          "correctAnswer": false
+        }
+      ],
+      "correctAnswer": "emoji_smile"
+    },
+    {
+      "id": "choice1",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "c1_1",
+          "text": "\"저도요! 이야기 재미있었어요 😊\"",
+          "affection": 8,
+          "suspicion": 2,
+          "nextDialogue": "d16_1"
+        },
+        {
+          "id": "c1_2",
+          "text": "\"네 ㅎㅎ 좋은 시간이었어요\"",
+          "affection": 5,
+          "suspicion": 5,
+          "nextDialogue": "d16_2"
+        },
+        {
+          "id": "c1_3",
+          "text": "\"맞아요! 다음에 또 만나요 💕\"",
+          "affection": 12,
+          "suspicion": 8,
+          "nextDialogue": "d16_3"
+        }
+      ]
+    },
+    {
+      "id": "d16_1",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d16_2",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d16_3",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d17",
+      "type": "narration",
+      "text": "[ 답장 전송 ]"
+    },
+    {
+      "id": "d18",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "이제 기다린다. 답장까지 최소 10분은 걸릴 거야."
+    },
+    {
+      "id": "d19",
+      "type": "narration",
+      "text": "[ 3분 후 ]"
+    },
+    {
+      "id": "d20",
+      "type": "narration",
+      "text": "[ 알림 ]"
+    },
+    {
+      "id": "d21",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "...벌써?"
+    },
+    {
+      "id": "d22",
+      "type": "dialogue",
+      "character": "서준",
+      "text": "주말에 시간 되시면 같이 산책하실래요?"
+    },
+    {
+      "id": "d23",
+      "type": "dialogue",
+      "character": "서준",
+      "text": "한강 쪽이 요즘 날씨 좋더라구요"
+    },
+    {
+      "id": "d24",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "smile",
+        "text": "(핸드폰 보며 미소)"
+      },
+      "right": {
+        "type": "inner",
+        "text": "빠르네. 관심 있다는 뜻이야."
+      }
+    },
+    {
+      "id": "d25",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "하지만... 너무 쉽게 넘어가면 안 돼."
+    },
+    {
+      "id": "choice2",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "c2_1",
+          "text": "\"좋아요! 토요일 어때요?\"",
+          "affection": 10,
+          "suspicion": 6,
+          "reverseSuspicion": 3,
+          "nextDialogue": "d26_1"
+        },
+        {
+          "id": "c2_2",
+          "text": "\"음... 주말에 일정 확인해볼게요\"",
+          "affection": 3,
+          "suspicion": 2,
+          "reverseSuspicion": 5,
+          "nextDialogue": "d26_2"
+        },
+        {
+          "id": "c2_3",
+          "text": "\"산책 좋아해요 ㅎㅎ 토요일 괜찮아요\"",
+          "affection": 7,
+          "suspicion": 3,
+          "reverseSuspicion": 2,
+          "nextDialogue": "d26_3"
+        }
+      ]
+    },
+    {
+      "id": "d26_1",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d26_2",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d26_3",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d27",
+      "type": "narration",
+      "text": "[ 다음 날 아침 ]"
+    },
+    {
+      "id": "d28",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "토요일, 한강. 약속 확정."
+    },
+    {
+      "id": "d29",
+      "type": "ui_notion",
+      "tasks": [
+        "첫 만남 성공 ✅",
+        "인스타 DM 교환 ✅",
+        "두 번째 만남 약속 확정 ✅"
+      ],
+      "warnings": [
+        "서준의 답장 속도가 빠름 - 관심도 높음",
+        "하지만 계산적일 수도 있음 - 경계 필요"
+      ],
+      "nextSteps": [
+        "토요일 데이트 준비",
+        "자연스러운 스킨십 유도",
+        "그의 직업에 대해 더 알아내기"
+      ]
+    },
+    {
+      "id": "d30",
+      "type": "narration",
+      "text": "지우는 담배를 꺼내 불을 붙인다."
+    },
+    {
+      "id": "d31",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "순조롭네."
+    },
+    {
+      "id": "d32",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "smile",
+        "text": "(연기를 내뿜으며 미소)"
+      },
+      "right": {
+        "type": "inner",
+        "image": "담배 연기",
+        "text": "...근데 이 사람, 뭔가 이상해. 너무 완벽한데?"
+      }
+    }
+  ]
+}

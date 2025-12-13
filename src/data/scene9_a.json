@@ -1,0 +1,150 @@
+{
+  "sceneId": "scene9_a_love_route",
+  "title": "A루트 - 서준이 빠지다",
+  "background": "cafe",
+  "bgm": "daily",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 1주일 후, 카페 ]"
+    },
+    {
+      "id": "d2",
+      "type": "narration",
+      "text": "서준이 먼저 와서 기다리고 있다. 평소와 다르게 긴장한 모습."
+    },
+    {
+      "id": "d3",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "nervous",
+      "text": "지우씨... 할 말이 있어요."
+    },
+    {
+      "id": "d4",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "curious",
+      "text": "무슨 일이에요?"
+    },
+    {
+      "id": "d5",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "저... 지우씨가 좋아요."
+    },
+    {
+      "id": "d6",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "surprised",
+        "text": "...네?"
+      },
+      "right": {
+        "type": "inner",
+        "text": "뭐라고?? 이게 무슨...!"
+      }
+    },
+    {
+      "id": "d7",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "sad",
+      "text": "처음엔... 그냥 모임에 데려오려고 한 거였어요."
+    },
+    {
+      "id": "d8",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "하지만 지금은 진심이에요. 지우씨, 저랑 사귀어주세요."
+    },
+    {
+      "id": "d9",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "이건... 예상 못 한 전개다. 진짜로 빠진 거야?"
+    },
+    {
+      "id": "d10",
+      "type": "ui_notion",
+      "tasks": [
+        "!! 긴급 상황 !!",
+        "서준이 진짜 고백함",
+        "컬트 포섭 → 연애로 변질",
+        "계획 재수립 필요"
+      ],
+      "warnings": [
+        "이게 진짜인지 확인 필요",
+        "아니면 더 고도화된 포섭 전략?",
+        "역의심도 위험 수준"
+      ],
+      "nextSteps": [
+        "고백 수락 여부 결정",
+        "서준의 진심 테스트",
+        "엔딩 루트 선택"
+      ]
+    },
+    {
+      "id": "choice1",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "c1_1",
+          "text": "\"저도... 좋아요\" (수락)",
+          "affection": 20,
+          "suspicion": 5,
+          "nextDialogue": "d11_accept"
+        },
+        {
+          "id": "c1_2",
+          "text": "\"잠깐... 이게 진심이에요?\" (의심)",
+          "affection": 8,
+          "suspicion": 12,
+          "reverseSuspicion": 8,
+          "nextDialogue": "d11_doubt"
+        }
+      ]
+    },
+    {
+      "id": "d11_accept",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d11_doubt",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d12",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "진심이에요. 컬트 같은 거... 이제 안 중요해요."
+    },
+    {
+      "id": "d13",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "지우씨만 있으면 돼요."
+    },
+    {
+      "id": "d14",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "smile",
+        "text": "(미소)"
+      },
+      "right": {
+        "type": "inner",
+        "text": "...이게 A엔딩으로 가는 길인가?"
+      }
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "sceneId": "scene8_special_program",
+  "title": "특별 프로그램 (첫 분기점)",
+  "background": "cult",
+  "bgm": "tension",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 토요일 저녁, 특별 프로그램 당일 ]"
+    },
+    {
+      "id": "d2",
+      "type": "narration",
+      "text": "모임 장소가 평소보다 어둡다. 촛불만 켜져 있다."
+    },
+    {
+      "id": "d3",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "...분위기가 이상한데?"
+    },
+    {
+      "id": "d4",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "serious",
+      "text": "오늘은 특별한 날입니다. '내면의 어둠'과 마주하는 시간."
+    },
+    {
+      "id": "d5",
+      "type": "narration",
+      "text": "모든 멤버들이 원형으로 앉는다."
+    },
+    {
+      "id": "d6",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "normal",
+      "text": "한 명씩 자신의 가장 어두운 비밀을 말해야 합니다."
+    },
+    {
+      "id": "d7",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "비밀 공유. 전형적인 컬트 통제 기법."
+    },
+    {
+      "id": "d8",
+      "type": "narration",
+      "text": "멤버들이 차례로 이야기한다."
+    },
+    {
+      "id": "d9",
+      "type": "dialogue",
+      "character": "멤버1",
+      "expression": "sad",
+      "text": "저는... 회사 돈을 횡령했어요."
+    },
+    {
+      "id": "d10",
+      "type": "dialogue",
+      "character": "멤버2",
+      "expression": "sad",
+      "text": "저는 남편을 배신했어요."
+    },
+    {
+      "id": "d11",
+      "type": "narration",
+      "text": "지우의 차례."
+    },
+    {
+      "id": "d12",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "smile",
+      "text": "지우씨. 당신의 어둠은 무엇입니까?"
+    },
+    {
+      "id": "d13",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "여기서 뭘 말하느냐가... 엄청 중요해."
+    },
+    {
+      "id": "choice1",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "c1_1",
+          "text": "\"저는... 사람들을 믿지 못해요\"",
+          "affection": 8,
+          "suspicion": 4,
+          "nextDialogue": "d14_1"
+        },
+        {
+          "id": "c1_2",
+          "text": "\"저는 거짓말을 너무 잘해요\"",
+          "affection": 12,
+          "suspicion": 15,
+          "reverseSuspicion": 10,
+          "nextDialogue": "d14_2"
+        },
+        {
+          "id": "c1_3",
+          "text": "\"저는... 외로워요. 그게 제 어둠이에요\"",
+          "affection": 10,
+          "suspicion": 3,
+          "nextDialogue": "d14_3"
+        }
+      ]
+    },
+    {
+      "id": "d14_1",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d14_2",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d14_3",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d15",
+      "type": "narration",
+      "text": "[ 모두 박수 ]"
+    },
+    {
+      "id": "d16",
+      "type": "dialogue",
+      "character": "리더",
+      "expression": "smile",
+      "text": "용감합니다. 당신은 빛을 받을 자격이 있어요."
+    },
+    {
+      "id": "d17",
+      "type": "narration",
+      "text": "[ 프로그램 종료 후 ]"
+    },
+    {
+      "id": "d18",
+      "type": "narration",
+      "text": "서준이 지우를 옥상으로 데려간다."
+    },
+    {
+      "id": "d19",
+      "type": "system",
+      "text": "background_change:street"
+    },
+    {
+      "id": "d20",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "오늘... 많이 힘들었죠?"
+    },
+    {
+      "id": "d21",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "sad",
+      "text": "조금..."
+    },
+    {
+      "id": "d22",
+      "type": "narration",
+      "text": "서준이 지우를 안는다."
+    },
+    {
+      "id": "d23",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "surprised",
+        "text": "(서준의 품에 안긴 채)"
+      },
+      "right": {
+        "type": "inner",
+        "text": "이건... 위로인가, 계산인가?"
+      }
+    },
+    {
+      "id": "d24",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "지우씨는 특별해요."
+    },
+    {
+      "id": "d25",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "normal",
+      "text": "다른 사람들이랑 달라요."
+    },
+    {
+      "id": "d26",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "...뭔가 이상해. 그의 말투가."
+    },
+    {
+      "id": "d27",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "c2_1",
+          "text": "\"서준씨도 특별해요\"",
+          "affection": 15,
+          "suspicion": 5,
+          "nextDialogue": "d28_1"
+        },
+        {
+          "id": "c2_2",
+          "text": "\"...고마워요\"",
+          "affection": 8,
+          "suspicion": 6,
+          "reverseSuspicion": 5,
+          "nextDialogue": "d28_2"
+        },
+        {
+          "id": "c2_3",
+          "text": "\"특별하다니요?\"",
+          "affection": 4,
+          "suspicion": 10,
+          "reverseSuspicion": 8,
+          "nextDialogue": "d28_3"
+        }
+      ]
+    },
+    {
+      "id": "d28_1",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d28_2",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d28_3",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d29",
+      "type": "narration",
+      "text": "서준이 지우의 얼굴을 들어 올린다."
+    },
+    {
+      "id": "d30",
+      "type": "narration",
+      "text": "키스할 것 같은 분위기."
+    },
+    {
+      "id": "d31",
+      "type": "split_screen",
+      "left": {
+        "character": "서준",
+        "expression": "smile",
+        "text": "(천천히 얼굴을 가까이)"
+      },
+      "right": {
+        "type": "inner",
+        "text": "지금 이 순간... 진짜야, 가짜야?"
+      }
+    },
+    {
+      "id": "d32",
+      "type": "narration",
+      "text": "하지만 서준이 멈춘다."
+    },
+    {
+      "id": "d33",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "...아직은 아니에요."
+    },
+    {
+      "id": "d34",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "...계산이다. 완전히."
+    },
+    {
+      "id": "d35",
+      "type": "narration",
+      "text": "[ 집으로 돌아온 후 ]"
+    },
+    {
+      "id": "d36",
+      "type": "system",
+      "text": "background_change:room"
+    },
+    {
+      "id": "d37",
+      "type": "ui_excel",
+      "character": "서준",
+      "data": [
+        ["단계", "목표", "진행도", "비고"],
+        ["1단계", "첫 접촉", "100%", "완료"],
+        ["2단계", "컬트 유입", "100%", "완료"],
+        ["3단계", "개인 상담", "100%", "완료"],
+        ["4단계", "비밀 공유", "100%", "완료"],
+        ["5단계", "감정 연결", "80%", "진행 중"]
+      ],
+      "note": "예상보다 빠름. 하지만 지우의 반응이 너무 완벽해. 의심 필요."
+    }
+  ]
+}

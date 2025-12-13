@@ -1,0 +1,171 @@
+{
+  "sceneId": "scene10_b_confrontation",
+  "title": "B루트 - 대결",
+  "background": "cult",
+  "bgm": "tension",
+  "dialogues": [
+    {
+      "id": "d1",
+      "type": "narration",
+      "text": "[ 2주 후, 컬트 모임 ]"
+    },
+    {
+      "id": "d2",
+      "type": "narration",
+      "text": "서준이 지우를 빈 방으로 데려간다."
+    },
+    {
+      "id": "d3",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "이제 그만하죠."
+    },
+    {
+      "id": "d4",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "surprised",
+      "text": "...무슨 말이에요?"
+    },
+    {
+      "id": "d5",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "연기 그만하라고요. 지우씨."
+    },
+    {
+      "id": "d6",
+      "type": "narration",
+      "text": "서준이 태블릿을 꺼낸다."
+    },
+    {
+      "id": "d7",
+      "type": "ui_excel",
+      "character": "서준",
+      "data": [
+        ["날짜", "모순 포인트", "증거"],
+        ["Week 1", "직업 정보 불일치", "기록 대조"],
+        ["Week 2", "반응 패턴 너무 완벽", "통계 분석"],
+        ["Week 3", "감정 표현 계산적", "미세표정 분석"],
+        ["Week 4", "취미 정보 모순", "대화 기록"],
+        ["결론", "역포섭 시도 확정", "99%"]
+      ],
+      "note": "지우씨, 당신도 프로였군요."
+    },
+    {
+      "id": "d8",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "처음부터 다 알고 있었어요."
+    },
+    {
+      "id": "d9",
+      "type": "split_screen",
+      "left": {
+        "character": "지우",
+        "expression": "serious",
+        "text": "..."
+      },
+      "right": {
+        "type": "inner",
+        "text": "...완전히 들켰다."
+      }
+    },
+    {
+      "id": "d10",
+      "type": "inner_monologue",
+      "character": "지우",
+      "text": "어떻게 대응하지?"
+    },
+    {
+      "id": "choice1",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "c1_1",
+          "text": "\"...인정합니다\"",
+          "affection": 5,
+          "suspicion": 20,
+          "nextDialogue": "d11_surrender"
+        },
+        {
+          "id": "c1_2",
+          "text": "\"당신도 마찬가지잖아요\"",
+          "affection": 8,
+          "suspicion": 15,
+          "nextDialogue": "d11_counter"
+        },
+        {
+          "id": "c1_3",
+          "text": "\"그래서? 이제 어쩔 건데?\"",
+          "affection": 10,
+          "suspicion": 12,
+          "nextDialogue": "d11_bold"
+        }
+      ]
+    },
+    {
+      "id": "d11_surrender",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d11_counter",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d11_bold",
+      "type": "system",
+      "text": "choice_response"
+    },
+    {
+      "id": "d12",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "smile",
+      "text": "그래도... 재밌었어요."
+    },
+    {
+      "id": "d13",
+      "type": "dialogue",
+      "character": "서준",
+      "expression": "serious",
+      "text": "이렇게 고수를 만난 건 처음이에요."
+    },
+    {
+      "id": "d14",
+      "type": "dialogue",
+      "character": "지우",
+      "expression": "smile",
+      "text": "...나도요."
+    },
+    {
+      "id": "d15",
+      "type": "split_screen",
+      "left": {
+        "character": "서준",
+        "expression": "smile",
+        "text": "\"그럼 이제부턴 정직하게 갑시다\""
+      },
+      "right": {
+        "character": "지우",
+        "expression": "smile",
+        "text": "\"좋아요\""
+      }
+    },
+    {
+      "id": "d16",
+      "type": "narration",
+      "text": "둘 다 웃는다. 하지만 경계는 풀지 않는다."
+    },
+    {
+      "id": "d17",
+      "type": "narration",
+      "text": "[ 엔딩으로... ]"
+    }
+  ]
+}
