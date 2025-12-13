@@ -111,12 +111,12 @@ function TitleScreen() {
       {/* 오버레이 */}
       <div className="absolute inset-0 bg-black/20" />
 
-      {/* 메인 버튼 - 살짝 우하단 배치 */}
+      {/* 메인 버튼 - 중앙 하단 배치 */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.5, duration: 0.8 }}
-        className="absolute bottom-[15%] left-[55%] -translate-x-1/2 z-10"
+        className="absolute bottom-[15%] left-0 right-0 mx-auto w-fit z-10"
       >
         <motion.button
           whileHover={{ scale: 1.05 }}
