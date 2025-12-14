@@ -1,12 +1,23 @@
 import { motion } from 'framer-motion'
 import { useGameStore } from '../store/gameStore'
+import type { EndingType } from '../types'
+
+interface EndingData {
+  title: string
+  emoji: string
+  color: string
+  description: string
+  image: string
+  content: string[]
+  grade: string
+}
 
 function EndingScreen() {
   const { affection, suspicion, reverseSuspicion, resetGame, calculateEnding } = useGameStore()
 
   const endingType = calculateEnding()
 
-  const endings = {
+  const endings: Record<EndingType, EndingData> = {
     ending_a: {
       title: 'A엔딩: 역관광',
       emoji: '🎉',
@@ -94,7 +105,7 @@ function EndingScreen() {
   const ending = endings[endingType]
 
   return (
-    <div className={`relative w-full max-w-5xl h-full aspect-video max-h-[90vh] bg-gradient-to-br ${ending.color} flex flex-col items-center justify-center p-4 rounded-lg overflow-y-auto scroll-smooth shadow-2xl`}>
+    <div className={`relative w-screen h-screen bg-gradient-to-br ${ending.color} flex flex-col items-center justify-center p-4 overflow-y-auto scroll-smooth`}>
       {/* 엔딩 CG 배경 */}
       {ending.image && (
         <div

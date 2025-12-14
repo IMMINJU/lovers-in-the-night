@@ -53,4 +53,4 @@ export const colors = {
     gold: '#ffd700',
     purple: '#c4b5fd',
   },
-}
+} as const

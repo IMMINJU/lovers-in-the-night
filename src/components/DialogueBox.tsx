@@ -6,52 +6,77 @@ import NotionUI from './NotionUI'
 import ExcelUI from './ExcelUI'
 import InferencePhase from './InferencePhase'
 
+interface BaseDialogue {
+  id: string
+  type: string
+  text?: string
+  character?: string
+  isNarration?: boolean
+}
+
 function DialogueBox() {
   const { currentDialogue, nextDialogue } = useScriptStore()
-  const { displayedText, isComplete, skip } = useTypingEffect(currentDialogue?.text, 30)
+  const { displayedText, isComplete, skip } = useTypingEffect(
+    currentDialogue && 'text' in currentDialogue ? currentDialogue.text : undefined,
+    30
+  )
 
   // system 타입은 자동으로 넘기기 - Hook은 최상단에 위치
   useEffect(() => {
-    if (currentDialogue?.type === 'system') {
+    if (currentDialogue && 'type' in currentDialogue && currentDialogue.type === 'system') {
       const timer = setTimeout(() => {
         nextDialogue()
       }, 100)
       return () => clearTimeout(timer)
     }
-  }, [currentDialogue?.type, nextDialogue])
+  }, [currentDialogue, nextDialogue])
 
   if (!currentDialogue) return null
 
   // system 메시지는 렌더링하지 않음
-  if (currentDialogue.type === 'system') {
+  if ('type' in currentDialogue && currentDialogue.type === 'system') {
     return null
   }
 
-  // ui_notion 타입 별도 처리
-  if (currentDialogue.type === 'ui_notion') {
-    return <NotionUI dialogue={currentDialogue} />
+  // ui_notion 타입 별도 처리 - max-5xl 컨테이너로 감싸기
+  if ('type' in currentDialogue && currentDialogue.type === 'ui_notion') {
+    return (
+      <div className="w-full max-w-5xl mx-auto">
+        <NotionUI dialogue={currentDialogue as any} />
+      </div>
+    )
   }
 
-  // ui_excel 타입 별도 처리
-  if (currentDialogue.type === 'ui_excel') {
-    return <ExcelUI dialogue={currentDialogue} />
+  // ui_excel 타입 별도 처리 - max-5xl 컨테이너로 감싸기
+  if ('type' in currentDialogue && currentDialogue.type === 'ui_excel') {
+    return (
+      <div className="w-full max-w-5xl mx-auto">
+        <ExcelUI dialogue={currentDialogue as any} />
+      </div>
+    )
   }
 
-  // inference 타입 별도 처리
-  if (currentDialogue.type === 'inference') {
-    return <InferencePhase dialogue={currentDialogue} />
+  // inference 타입 별도 처리 - max-5xl 컨테이너로 감싸기
+  if ('type' in currentDialogue && currentDialogue.type === 'inference') {
+    return (
+      <div className="w-full max-w-5xl mx-auto">
+        <InferencePhase dialogue={currentDialogue as any} />
+      </div>
+    )
   }
 
   // 대사 타입별 렌더링
   const renderDialogue = () => {
-    switch (currentDialogue.type) {
+    const dialogue = currentDialogue as BaseDialogue
+
+    switch (dialogue.type) {
       case 'dialogue':
         return (
           <>
             {/* 캐릭터 이름 */}
-            {!currentDialogue.isNarration && (
+            {!dialogue.isNarration && dialogue.character && (
               <div className="text-affection font-bold text-base sm:text-lg mb-2">
-                {currentDialogue.character}
+                {dialogue.character}
               </div>
             )}
 
@@ -67,7 +92,7 @@ function DialogueBox() {
           <>
             <div className="text-purple-400 font-bold text-base sm:text-lg mb-2 flex items-center gap-2">
               <span>💭</span>
-              <span>{currentDialogue.character} (속마음)</span>
+              <span>{dialogue.character || '알 수 없음'} (속마음)</span>
             </div>
             <div className="text-purple-200 text-sm sm:text-base leading-relaxed italic">
               {displayedText}

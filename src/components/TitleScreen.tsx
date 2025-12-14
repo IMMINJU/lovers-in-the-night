@@ -1,6 +1,15 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useGameStore } from '../store/gameStore'
+import type { SaveData } from '../types'
+
+interface SaveInfo {
+  exists: boolean
+  scene?: string
+  date?: string
+  affection?: number
+  suspicion?: number
+}
 
 function TitleScreen() {
   const { setGameState, loadGame } = useGameStore()
@@ -10,11 +19,7 @@ function TitleScreen() {
     setGameState('playing')
   }
 
-  const handleContinue = () => {
-    setShowMenu(true)
-  }
-
-  const handleLoadSlot = (slotNumber) => {
+  const handleLoadSlot = (slotNumber: number) => {
     const success = loadGame(slotNumber)
     if (success) {
       setShowMenu(false)
@@ -23,10 +28,10 @@ function TitleScreen() {
     }
   }
 
-  const getSaveInfo = (slotNumber) => {
+  const getSaveInfo = (slotNumber: number): SaveInfo => {
     const saveData = localStorage.getItem(`save_slot_${slotNumber}`)
     if (saveData) {
-      const data = JSON.parse(saveData)
+      const data: SaveData = JSON.parse(saveData)
       const date = new Date(data.timestamp)
       return {
         exists: true,
@@ -101,7 +106,7 @@ function TitleScreen() {
   }
 
   return (
-    <div className="relative w-full max-w-4xl h-full max-h-[90vh] aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-2xl">
+    <div className="relative w-screen h-screen bg-gray-900 overflow-hidden">
       {/* 타이틀 배경 이미지 */}
       <div
         className="absolute inset-0 bg-cover bg-center"

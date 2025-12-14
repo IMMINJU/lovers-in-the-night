@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-const characterMap = {
+const characterMap: Record<string, string> = {
   '지우': 'jiwoo',
   '서준': 'seojun',
   '리더': 'leader',
@@ -8,7 +8,12 @@ const characterMap = {
   '멤버2': 'members',
 }
 
-function CharacterPortrait({ character, expression }) {
+interface CharacterPortraitProps {
+  character?: string
+  expression?: string
+}
+
+function CharacterPortrait({ character, expression }: CharacterPortraitProps) {
   if (!character) return null
 
   const charId = characterMap[character]

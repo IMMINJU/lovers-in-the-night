@@ -4,6 +4,7 @@ import TitleScreen from './components/TitleScreen'
 import EndingScreen from './components/EndingScreen'
 import { useGameStore } from './store/gameStore'
 import { useScriptStore } from './store/scriptStore'
+import type { ScriptData } from './types'
 import scene1Data from './data/scene1.json'
 import scene2Data from './data/scene2.json'
 import scene3Data from './data/scene3.json'
@@ -23,28 +24,28 @@ import scene11BData from './data/scene11_b.json'
 import scene11CData from './data/scene11_c.json'
 
 // 씬 데이터 맵
-const sceneMap = {
-  scene1: scene1Data,
-  scene2: scene2Data,
-  scene3: scene3Data,
-  scene4: scene4Data,
-  scene5: scene5Data,
-  scene6: scene6Data,
-  scene7: scene7Data,
-  scene8: scene8Data,
-  scene9_a: scene9AData,
-  scene9_b: scene9BData,
-  scene9_c: scene9CData,
-  scene10_a: scene10AData,
-  scene10_b: scene10BData,
-  scene10_c: scene10CData,
-  scene11_a: scene11AData,
-  scene11_b: scene11BData,
-  scene11_c: scene11CData,
+const sceneMap: Record<string, ScriptData> = {
+  scene1: scene1Data as ScriptData,
+  scene2: scene2Data as ScriptData,
+  scene3: scene3Data as ScriptData,
+  scene4: scene4Data as ScriptData,
+  scene5: scene5Data as ScriptData,
+  scene6: scene6Data as ScriptData,
+  scene7: scene7Data as ScriptData,
+  scene8: scene8Data as ScriptData,
+  scene9_a: scene9AData as ScriptData,
+  scene9_b: scene9BData as ScriptData,
+  scene9_c: scene9CData as ScriptData,
+  scene10_a: scene10AData as ScriptData,
+  scene10_b: scene10BData as ScriptData,
+  scene10_c: scene10CData as ScriptData,
+  scene11_a: scene11AData as ScriptData,
+  scene11_b: scene11BData as ScriptData,
+  scene11_c: scene11CData as ScriptData,
 }
 
 function App() {
-  const { gameState, currentScene, setScene, setGameState, calculateEnding, suspicion, affection } = useGameStore()
+  const { gameState, currentScene, setScene, setGameState, suspicion } = useGameStore()
   const { loadScript, setOnSceneEnd } = useScriptStore()
 
   // 씬 전환 핸들러
@@ -60,19 +61,19 @@ function App() {
     if (currentScene === 'scene8') {
       if (suspicion <= 58) {
         setScene('scene9_a') // A루트 - 낮은 의심도 (27-58) → A엔딩 가능
-        loadScript(sceneMap['scene9_a'])
+        loadScript(sceneMap['scene9_a']!)
       } else if (suspicion >= 68) {
         setScene('scene9_b') // B루트 - 높은 의심도 (68-74) → B엔딩
-        loadScript(sceneMap['scene9_b'])
+        loadScript(sceneMap['scene9_b']!)
       } else {
         setScene('scene9_c') // C루트 - 중간 의심도 (59-67) → C엔딩 최적
-        loadScript(sceneMap['scene9_c'])
+        loadScript(sceneMap['scene9_c']!)
       }
       return
     }
 
     // 씬별 다음 씬 정의
-    const nextSceneMap = {
+    const nextSceneMap: Record<string, string> = {
       scene1: 'scene2',
       scene2: 'scene3',
       scene3: 'scene4',
@@ -95,12 +96,12 @@ function App() {
     if (nextScene && sceneMap[nextScene]) {
       // 다음 씬으로 이동
       setScene(nextScene)
-      loadScript(sceneMap[nextScene])
+      loadScript(sceneMap[nextScene]!)
     } else {
       // 더 이상 씬이 없으면 엔딩
       setGameState('ending')
     }
-  }, [currentScene, suspicion, affection, setScene, setGameState, loadScript])
+  }, [currentScene, suspicion, setScene, setGameState, loadScript])
 
   // 씬 종료 콜백 등록
   useEffect(() => {
@@ -110,7 +111,7 @@ function App() {
   // 게임 시작시 현재 씬 로드
   useEffect(() => {
     if (gameState === 'playing' && currentScene && sceneMap[currentScene]) {
-      loadScript(sceneMap[currentScene])
+      loadScript(sceneMap[currentScene]!)
     }
   }, [gameState, currentScene, loadScript])
 

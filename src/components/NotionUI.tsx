@@ -1,6 +1,16 @@
 import { motion } from 'framer-motion'
 
-function NotionUI({ dialogue }) {
+interface NotionDialogue {
+  tasks?: string[]
+  warnings?: string[]
+  nextSteps?: string[]
+}
+
+interface NotionUIProps {
+  dialogue: NotionDialogue
+}
+
+function NotionUI({ dialogue }: NotionUIProps) {
   const { tasks, warnings, nextSteps } = dialogue
 
   return (

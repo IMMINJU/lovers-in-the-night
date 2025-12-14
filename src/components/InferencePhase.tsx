@@ -3,16 +3,38 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useScriptStore } from '../store/scriptStore'
 import { useGameStore } from '../store/gameStore'
 
-function InferencePhase({ dialogue }) {
+interface InferenceDialogue {
+  id: string
+  type: 'inference'
+  question: string
+  clues?: string[]
+  options: Array<{
+    id: string
+    text: string
+    emoji?: string
+    checkConsistency?: {
+      category: string
+      value: string
+    }
+  }>
+  correctAnswer: string
+  timeLimit?: number
+}
+
+interface InferencePhaseProps {
+  dialogue: InferenceDialogue
+}
+
+function InferencePhase({ dialogue }: InferencePhaseProps) {
   const { question, clues, options, correctAnswer, timeLimit } = dialogue
   const { nextDialogue } = useScriptStore()
   const { checkConsistency, recordTrackedChoice } = useGameStore()
 
-  const [selectedAnswer, setSelectedAnswer] = useState(null)
-  const [isCorrect, setIsCorrect] = useState(null)
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
+  const [isCorrect, setIsCorrect] = useState<boolean | null>(null)
   const [timeLeft, setTimeLeft] = useState(timeLimit || 30)
   const [showResult, setShowResult] = useState(false)
-  const [lieWarning, setLieWarning] = useState(null)
+  const [lieWarning, setLieWarning] = useState<string | null>(null)
 
   // 타이머
   useEffect(() => {
@@ -39,7 +61,7 @@ function InferencePhase({ dialogue }) {
     }, 3000)
   }
 
-  const handleAnswerSelect = (optionId) => {
+  const handleAnswerSelect = (optionId: string) => {
     if (showResult) return
 
     setSelectedAnswer(optionId)

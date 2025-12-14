@@ -1,15 +1,30 @@
 import { motion } from 'framer-motion'
 
-const characterMap = {
+const characterMap: Record<string, string> = {
   '지우': 'jiwoo',
   '서준': 'seojun',
 }
 
-function SplitScreenDialogue({ dialogue }) {
+interface SplitDialogueData {
+  left: {
+    character?: string
+    text?: string
+    expression?: string
+  }
+  right: {
+    text: string
+  }
+}
+
+interface SplitScreenDialogueProps {
+  dialogue: SplitDialogueData
+}
+
+function SplitScreenDialogue({ dialogue }: SplitScreenDialogueProps) {
   const { left, right } = dialogue
 
   // 캐릭터 이미지 경로
-  const getCharacterImage = (character, expression) => {
+  const getCharacterImage = (character: string, expression?: string): string | null => {
     const charId = characterMap[character]
     if (!charId) return null
     return `/images/characters/${charId}-${expression || 'normal'}.png`
@@ -26,7 +41,7 @@ function SplitScreenDialogue({ dialogue }) {
           className="absolute left-0 right-0 mx-auto bottom-0 w-fit max-h-[95vh] md:max-h-[80vh] max-w-[80%] md:max-w-[50%]"
         >
           <img
-            src={getCharacterImage(left.character, left.expression)}
+            src={getCharacterImage(left.character, left.expression) || ''}
             alt={left.character}
             className="h-auto max-h-full max-w-full object-contain drop-shadow-2xl"
             style={{ mixBlendMode: 'multiply' }}
@@ -34,12 +49,12 @@ function SplitScreenDialogue({ dialogue }) {
         </motion.div>
       )}
 
-      {/* 속마음 - 상단 (작게 떠있는 느낌) */}
+      {/* 속마음 - 상단 (작게 떠있는 느낌) - max-5xl */}
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className="absolute top-8 left-0 right-0 mx-auto w-[90%] max-w-2xl px-4"
+        className="absolute top-8 left-0 right-0 mx-auto w-[90%] max-w-5xl px-4"
       >
         <div className="bg-black/60 backdrop-blur-sm px-6 py-3 rounded-lg border border-purple-400/50">
           <div className="text-purple-200 text-sm italic text-center leading-relaxed">
@@ -48,13 +63,13 @@ function SplitScreenDialogue({ dialogue }) {
         </div>
       </motion.div>
 
-      {/* 겉모습 대사 - 하단 (영화 자막처럼) */}
+      {/* 겉모습 대사 - 하단 (영화 자막처럼) - max-5xl */}
       {left.text && (
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="absolute bottom-16 md:bottom-24 left-0 right-0 mx-auto w-[90%] max-w-3xl px-4"
+          className="absolute bottom-16 md:bottom-24 left-0 right-0 mx-auto w-[90%] max-w-5xl px-4"
         >
           <div className="bg-black/80 backdrop-blur-md px-4 md:px-8 py-3 md:py-4 rounded-lg border border-yellow-500/80">
             <div className="text-white text-sm md:text-base text-center leading-relaxed">{left.text}</div>

@@ -1,7 +1,8 @@
 import { create } from 'zustand'
 import { useGameStore } from './gameStore'
+import type { ScriptStore, ChoiceDialogue, BackgroundKey } from '../types'
 
-const bgMap = {
+const bgMap: Record<BackgroundKey, string> = {
   room: '/images/backgrounds/room.png',
   cafe: '/images/backgrounds/cafe.png',
   park: '/images/backgrounds/park.png',
@@ -9,7 +10,7 @@ const bgMap = {
   street: '/images/backgrounds/street.png',
 }
 
-export const useScriptStore = create((set, get) => ({
+export const useScriptStore = create<ScriptStore>((set, get) => ({
   // 현재 로드된 스크립트
   currentScript: null,
   currentDialogueIndex: 0,
@@ -28,13 +29,14 @@ export const useScriptStore = create((set, get) => ({
   loadScript: (scriptData) => {
     // 배경 설정 (이미지 or 색상)
     if (scriptData.background) {
-      useGameStore.getState().setBackground(bgMap[scriptData.background] || scriptData.background)
+      const bg = bgMap[scriptData.background as BackgroundKey] || scriptData.background
+      useGameStore.getState().setBackground(bg)
     }
 
     set({
       currentScript: scriptData,
       currentDialogueIndex: 0,
-      currentDialogue: scriptData.dialogues[0],
+      currentDialogue: scriptData.dialogues[0] || null,
       showingChoices: false,
       currentChoices: null,
     })
@@ -60,9 +62,12 @@ export const useScriptStore = create((set, get) => ({
 
     const nextDialogue = currentScript.dialogues[nextIndex]
 
+    if (!nextDialogue) return
+
     // 배경 변경이 있으면 적용
     if (nextDialogue.background) {
-      useGameStore.getState().setBackground(bgMap[nextDialogue.background] || nextDialogue.background)
+      const bg = bgMap[nextDialogue.background as BackgroundKey] || nextDialogue.background
+      useGameStore.getState().setBackground(bg)
     }
 
     // 선택지인 경우
@@ -70,7 +75,7 @@ export const useScriptStore = create((set, get) => ({
       set({
         currentDialogueIndex: nextIndex,
         showingChoices: true,
-        currentChoices: nextDialogue,
+        currentChoices: nextDialogue as ChoiceDialogue,
         currentDialogue: null,
       })
     } else {
@@ -97,7 +102,7 @@ export const useScriptStore = create((set, get) => ({
     // 게이지 변화 팝업을 볼 수 있도록 지연
     setTimeout(() => {
       // nextDialogue가 있으면 해당 대화로 이동
-      if (choice.nextDialogue) {
+      if (choice.nextDialogue && currentScript) {
         const targetIndex = currentScript.dialogues.findIndex(
           d => d.id === choice.nextDialogue
         )
@@ -105,7 +110,7 @@ export const useScriptStore = create((set, get) => ({
         if (targetIndex !== -1) {
           set({
             currentDialogueIndex: targetIndex,
-            currentDialogue: currentScript.dialogues[targetIndex],
+            currentDialogue: currentScript.dialogues[targetIndex] || null,
           })
           return
         }

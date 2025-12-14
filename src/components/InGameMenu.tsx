@@ -2,11 +2,16 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useGameStore } from '../store/gameStore'
 
-function InGameMenu({ isOpen, onClose }) {
-  const { saveGame, resetGame } = useGameStore()
+interface InGameMenuProps {
+  isOpen: boolean
+  onClose: () => void
+}
+
+function InGameMenu({ isOpen, onClose }: InGameMenuProps) {
+  const { saveGame, resetGame, toggleDebugMode, toggleSkipMode, debugMode, skipMode } = useGameStore()
   const [saveMessage, setSaveMessage] = useState('')
 
-  const handleSave = (slotNumber) => {
+  const handleSave = (slotNumber: number) => {
     saveGame(slotNumber)
     setSaveMessage(`슬롯 ${slotNumber}에 저장되었습니다.`)
     setTimeout(() => setSaveMessage(''), 2000)
@@ -62,6 +67,34 @@ function InGameMenu({ isOpen, onClose }) {
                   슬롯 {slot}
                 </button>
               ))}
+            </div>
+          </div>
+
+          {/* 디버그 옵션 */}
+          <div className="mb-6">
+            <h3 className="text-white text-lg font-bold mb-3">디버그 옵션</h3>
+            <div className="space-y-2">
+              <button
+                onClick={toggleDebugMode}
+                className={`w-full py-3 rounded-lg border transition-all ${
+                  debugMode
+                    ? 'bg-green-600 hover:bg-green-500 border-green-400 text-white'
+                    : 'bg-gray-700/50 hover:bg-gray-600/50 border-gray-500/30 text-gray-300'
+                }`}
+              >
+                🐛 디버그 모드 {debugMode ? 'ON' : 'OFF'} (Ctrl+D)
+              </button>
+
+              <button
+                onClick={toggleSkipMode}
+                className={`w-full py-3 rounded-lg border transition-all ${
+                  skipMode
+                    ? 'bg-blue-600 hover:bg-blue-500 border-blue-400 text-white'
+                    : 'bg-gray-700/50 hover:bg-gray-600/50 border-gray-500/30 text-gray-300'
+                }`}
+              >
+                ⏩ 스킵 모드 {skipMode ? 'ON' : 'OFF'} (Ctrl+S)
+              </button>
             </div>
           </div>
 

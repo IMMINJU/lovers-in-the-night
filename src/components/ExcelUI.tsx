@@ -1,31 +1,53 @@
 import { motion } from 'framer-motion'
 
-function ExcelUI({ dialogue }) {
+interface ExcelDialogue {
+  type?: string
+  character?: string
+  title?: string
+  headers?: string[]
+  rows?: string[][]
+  summary?: string
+  content?: {
+    filename?: string
+    row?: Record<string, string>
+  }
+  data?: string[][]
+  note?: string
+}
+
+interface ExcelUIProps {
+  dialogue: ExcelDialogue
+}
+
+function ExcelUI({ dialogue }: ExcelUIProps) {
   // scene2 형식: content.filename, content.row
   // scene6~8 형식: character, data (2d array), note
   const isScene2Format = dialogue.content?.row
   const isDataArrayFormat = dialogue.data
 
-  let displayTitle, displayHeaders, displayRows, displayNote
+  let displayTitle: string
+  let displayHeaders: string[]
+  let displayRows: string[][]
+  let displayNote: string | undefined
 
   if (isScene2Format) {
     // scene2 형식
-    displayTitle = dialogue.content.filename || '포섭 대상 관리'
-    const row = dialogue.content.row
+    displayTitle = dialogue.content?.filename || '포섭 대상 관리'
+    const row = dialogue.content!.row!
     displayHeaders = Object.keys(row)
     displayRows = [Object.values(row)]
-    displayNote = null
+    displayNote = undefined
   } else if (isDataArrayFormat) {
     // scene6~8 형식 (data는 2차원 배열)
     displayTitle = dialogue.character ? `${dialogue.character}의 기록` : '분석 보고서'
-    displayHeaders = dialogue.data[0] // 첫 행이 헤더
-    displayRows = dialogue.data.slice(1) // 나머지가 데이터
+    displayHeaders = dialogue.data![0] || [] // 첫 행이 헤더
+    displayRows = dialogue.data!.slice(1) || [] // 나머지가 데이터
     displayNote = dialogue.note
   } else {
     // 기존 형식
     displayTitle = dialogue.title || '포섭 대상 분석 보고서'
-    displayHeaders = dialogue.headers
-    displayRows = dialogue.rows
+    displayHeaders = dialogue.headers || []
+    displayRows = dialogue.rows || []
     displayNote = dialogue.summary
   }
 
@@ -53,7 +75,7 @@ function ExcelUI({ dialogue }) {
       >
         <div className="border border-gray-300 rounded overflow-hidden">
           {/* 테이블 헤더 */}
-          <div className="bg-green-600 text-white font-bold" style={{ display: 'grid', gridTemplateColumns: `repeat(${displayHeaders?.length || 4}, 1fr)` }}>
+          <div className="bg-green-600 text-white font-bold" style={{ display: 'grid', gridTemplateColumns: `repeat(${displayHeaders.length || 4}, 1fr)` }}>
             {displayHeaders && displayHeaders.map((header, index) => (
               <div
                 key={index}
@@ -72,7 +94,7 @@ function ExcelUI({ dialogue }) {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.3 + rowIndex * 0.1 }}
               className={rowIndex % 2 === 0 ? 'bg-gray-50' : 'bg-white'}
-              style={{ display: 'grid', gridTemplateColumns: `repeat(${displayHeaders?.length || 4}, 1fr)` }}
+              style={{ display: 'grid', gridTemplateColumns: `repeat(${displayHeaders.length || 4}, 1fr)` }}
             >
               {row.map((cell, cellIndex) => (
                 <div

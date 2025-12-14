@@ -1,8 +1,9 @@
 import { create } from 'zustand'
+import type { GameStore, GameState, EndingType, SaveData } from '../types'
 
-export const useGameStore = create((set) => ({
+export const useGameStore = create<GameStore>((set) => ({
   // 게임 상태
-  gameState: 'title', // 'title', 'playing', 'ending'
+  gameState: 'title',
 
   // 게이지 (숨겨진 스탯)
   affection: 10,
@@ -17,14 +18,18 @@ export const useGameStore = create((set) => ({
   choiceHistory: [],
 
   // 거짓말 추적
-  trackedChoices: {}, // { "job": "designer", "hobby": "essay", ... }
-  lieDetections: [], // [{ scene, category, penalty }, ...]
+  trackedChoices: {},
+  lieDetections: [],
 
   // 게이지 변화 팝업용
   recentChanges: null,
 
   // 배경 이미지
   currentBackground: null,
+
+  // 디버그 모드
+  debugMode: false,
+  skipMode: false,
 
   // 게이지 업데이트
   updateGauges: (affectionChange, suspicionChange, reverseSuspicionChange = 0) =>
@@ -96,13 +101,13 @@ export const useGameStore = create((set) => ({
   nextDialogue: () => set((state) => ({ currentDialogueIndex: state.currentDialogueIndex + 1 })),
 
   // 게임 상태 변경
-  setGameState: (state) => set({ gameState: state }),
+  setGameState: (gameState: GameState) => set({ gameState }),
 
   // 배경 변경
   setBackground: (background) => set({ currentBackground: background }),
 
   // 엔딩 계산
-  calculateEnding: () => {
+  calculateEnding: (): EndingType => {
     const state = useGameStore.getState()
     const { affection, suspicion } = state
 
@@ -124,7 +129,7 @@ export const useGameStore = create((set) => ({
   // 세이브
   saveGame: (slotNumber) => {
     const state = useGameStore.getState()
-    const saveData = {
+    const saveData: SaveData = {
       affection: state.affection,
       suspicion: state.suspicion,
       reverseSuspicion: state.reverseSuspicion,
@@ -139,9 +144,9 @@ export const useGameStore = create((set) => ({
 
   // 로드
   loadGame: (slotNumber) => {
-    const saveData = localStorage.getItem(`save_slot_${slotNumber}`)
-    if (saveData) {
-      const data = JSON.parse(saveData)
+    const saveDataStr = localStorage.getItem(`save_slot_${slotNumber}`)
+    if (saveDataStr) {
+      const data: SaveData = JSON.parse(saveDataStr)
       set({
         affection: data.affection,
         suspicion: data.suspicion,
@@ -171,4 +176,10 @@ export const useGameStore = create((set) => ({
     recentChanges: null,
     currentBackground: null,
   }),
+
+  // 디버그 모드 토글
+  toggleDebugMode: () => set((state) => ({ debugMode: !state.debugMode })),
+
+  // 스킵 모드 토글
+  toggleSkipMode: () => set((state) => ({ skipMode: !state.skipMode })),
 }))
