@@ -76,7 +76,7 @@ function GameContainer() {
 
   return (
     <div
-      className="relative w-screen h-screen flex flex-col overflow-hidden cursor-pointer bg-gray-900"
+      className="relative w-screen h-[100dvh] flex flex-col overflow-hidden cursor-pointer bg-gray-900"
       onClick={handleClick}
     >
       {/* 씬 전환 페이드 오버레이 */}
